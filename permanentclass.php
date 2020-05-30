@@ -75,8 +75,23 @@
                                 <a>Enter the date </a>
                                 <input type='date' name='date' placeholder="Date"><br><br>
                                 <a>Enter the period </a>
-                                <input type='number' name='period' placeholder="Period"><br><br>
-                                <button type='submit' name='Free'>Free it</button>
+                                <div class="sample1">
+                                <label for="period"></label>
+                                <select name="period">
+                                    <option value="morningsession">Entire Morning Session</option>
+                                    <option value="noonsession">Entire Noon Session</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                                </div>
+                                <br>
+                                <button type="submit">Free it</button>
                             </form>
                             <br>
                             <a href="hallissue.php">Having Any Issues in this Hall?</a><br><br>
