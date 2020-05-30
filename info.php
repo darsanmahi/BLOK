@@ -24,6 +24,7 @@
         $dept=$_SESSION['class'];
         $uname=$_SESSION['usernames'];
         $db1=mysqli_connect("localhost","root","",$bname);
+        $db2=mysqli_connect("localhost","root","","hallbookingauthority");
         if(!$db1)
         {
             echo "connection failed!!";
@@ -31,17 +32,23 @@
         else
         {
             $q="SELECT * from {$day} where hallnumber='$hll' and startingperiod='$pno'";
+            $query="SELECT * from tempfreeperiod where hallnumber='$hll' and period='$pno' and date='$date'";
+            $result=mysqli_query($db2,$query);
+            $rowcount=mysqli_num_rows($result);
             $r=mysqli_query($db1,$q);
             $rc=mysqli_num_rows($r);
-            if($rc==0)
+            if($rc==0 && $rowcount==0)
             {echo 'INVALID HALL SELECTED';}
             else
             {
                 echo "THE HALL YOU SELECTED ".$hll;
             echo '<br>';
             $qu2="INSERT INTO booking (hallnumber,period,date,day,class_code,roll_no) values ('$hll','$pno','$date','$day','$dept','$uname')";
+            $qu5="UPDATE tempfreeperiod set status='Booked' where hallnumber='$hll'";
             if(!mysqli_query($db1,$qu2))
             {echo mysqli_error($db1);}
+            if(!mysqli_query($db2,$qu5))
+            {echo mysqli_error($db2);}
             ?>
             <a href=category.php class="back"><input type="submit" value="Back"></a>
             <?php

@@ -49,10 +49,10 @@
         {
             if($per=='morningsession')
             {
-                $q1="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',1,'$date','$block')";
-                $q2="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',2,'$date','$block')";
-                $q3="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',3,'$date','$block')";
-                $q4="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',4,'$date','$block')";
+                $q1="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',1,'$date','$block','Free')";
+                $q2="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',2,'$date','$block','Free')";
+                $q3="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',3,'$date','$block','Free')";
+                $q4="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',4,'$date','$block','Free')";
                 $r1=mysqli_query($db1,$q1);
                 $r2=mysqli_query($db1,$q2);
                 $r3=mysqli_query($db1,$q3);
@@ -64,10 +64,10 @@
             }
             elseif($per=='noonsession')
             {
-                $q1="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',5,'$date','$block')";
-                $q2="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',6,'$date','$block')";
-                $q3="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',7,'$date','$block')";
-                $q4="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1',8,'$date','$block')";
+                $q1="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',5,'$date','$block','Free')";
+                $q2="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',6,'$date','$block','Free')";
+                $q3="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',7,'$date','$block','Free')";
+                $q4="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',8,'$date','$block','Free')";
                 $r1=mysqli_query($db1,$q1);
                 $r2=mysqli_query($db1,$q2);
                 $r3=mysqli_query($db1,$q3);
@@ -80,7 +80,7 @@
             }
             else
             {
-                $q="INSERT into tempfreeperiod(hallnumber,period,date,block) values ('$hno1','$per','$date','$block')";
+                $q="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1','$per','$date','$block','Free')";
                 $r1=mysqli_query($db1,$q);
                 if(!$r1)
                 {echo mysqli_error($db1);}

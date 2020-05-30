@@ -17,6 +17,10 @@
     </style>
     <?php
         session_start();
+        $i=0;
+        $j=0;
+        $flag=0;
+        $temp=0;
         $bname=$_POST['Block'];
         $db1=mysqli_connect("localhost","root","",$bname);
         $db2=mysqli_connect("localhost","root","","hallbookingauthority");
@@ -35,8 +39,8 @@
             $_SESSION['day']=$day;
             $_SESSION['date']=$date;
             $_SESSION['class']=$dept;
-            $q1="SELECT hallnumber from booking where date='$date'";
-            $q2="SELECT hallnumber from tempfreeperiod where period='$pno' and date='$date' and block='$bname'";
+            $q1="SELECT hallnumber from booking where date='$date' and period='$pno'";
+            $q2="SELECT hallnumber from tempfreeperiod where period='$pno' and date='$date' and block='$bname' and status='Free'";
             if( $date=="" || $day=="" || $pno=="" || $dept="" || $year="")
             {
                 echo "<script> alert('All field required');</script>";
@@ -48,33 +52,33 @@
             $rc2=mysqli_num_rows($r2);
             if($rc1>0)
             {
-                $query="SELECT DISTINCT(a.hallnumber) from {$day} a,booking b  where a.hallnumber != (SELECT hallnumber from booking where date='$date') and $pno=a.startingperiod";
+                $query="SELECT hallnumber from {$day} where hallnumber not in (SELECT hallnumber from booking where date='$date' and period='$pno') and startingperiod='$pno'";
             }
             elseif($rc1==0)
             {
-                $query="SELECT hallnumber from {$day} where  $pno=startingperiod";
+                $query="SELECT hallnumber from {$day} where $pno=startingperiod";
             }
-            $result=mysqli_query($db1,$query);
-            $rc=mysqli_num_rows($result);
-            if($rc!=0)
-            {
-                echo "The halls available are";
-                echo '<br>';
-                if($rc2>0)
+                $result=mysqli_query($db1,$query);
+                $rc=mysqli_num_rows($result);
+                if($rc!=0)
                 {
-                    $rcc=mysqli_fetch_assoc($r2);
-                    echo '<li>'.$rcc['hallnumber'].'</li>';
+                    echo "The halls available are";
+                    echo '<br>';
+                    if($rc2>0)
+                    {
+                        $rcc=mysqli_fetch_assoc($r2);
+                        echo '<li>'.$rcc['hallnumber'].'</li>';
+                    }
+                    while($rows=mysqli_fetch_array($result))
+                    {
+                        echo '<li>'.$rows['hallnumber'].'</li>';
+                    }
+                    echo '<form action="info.php" method="POST">
+                    <input type="text" name="hall_no" placeholder="Hall Number">
+                    <button class="one1" type="submit" name="book_btn">Book</button>
+                    </form>';
                 }
-                while($rows=mysqli_fetch_array($result))
-                {
-                    echo '<li>'.$rows['hallnumber'].'</li>';
-                }
-                echo '<form action="info.php" method="POST">
-                  <input type="text" name="hall_no" placeholder="Hall Number">
-                  <button class="one1" type="submit" name="book_btn">Book</button>
-                  </form>';
+                elseif($rc==0)
+                {echo "NO HALLS AVAILABLE";}
             }
-            else
-            {echo "NO HALLS AVAILABLE";}
-        }  
     ?>
