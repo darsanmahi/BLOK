@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+    background-image: url("../psgtech.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+ul{
+    float: right;
+    list-style-type: none;
+}
+#topbar{
+    background-color: black;
+    height: 10px;
+    width: 100%;
+    color: red;
+}
+header {
+    background-image: url("psgtech.jpg");
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
