@@ -31,7 +31,7 @@
     session_start();
     $hno=$_SESSION['res'];
     $hno1=$hno['hallnumber'];
-    $st='Not Rectified';
+    $st='unrectified';
     echo '<header class="jumbotron">Your Permanent Class is '.$hno1;
     echo '</header>';
     $issue=$_POST['issue'];

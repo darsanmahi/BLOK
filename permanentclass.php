@@ -67,7 +67,7 @@
                 <div class="container">
                     <div class="row row-content">
                         <div class="col-12 offset-10 col-sm-3 align-content-right">
-                            <a href="issuesreported.php">Issues reported</a>
+                            <a href="issuereported.php">Issues reported</a>
                         </div>
                         <div class="col-12">
                             <a>Add Free Periods</a><br><br>
