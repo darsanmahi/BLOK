@@ -13,69 +13,75 @@
         }
         .logo{
             float: right;
-            margin-top: -100px;
         }
         .major{
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin-left: 450px;
-            margin-top: 100px;
         }
         .major a {
             font-size: 25px;
             color: black;
-            margin-top: 50px;
-        }
-        .sample{
-            margin-left: 25px;
         }
         .major input{
-            margin-left: 20px;
             width: 200px;
             border-color:#3498db;
-            border-radius: 24px;
+            border-radius: 16px;
             padding: 10px;
-            margin-top: 40px;
         }
         .buttn{
+            background: white;
+            border-color:#3498db;
+            border-radius: 16px;
+            padding: 10px;
+            width: 100px;
+            display: block;
             cursor: pointer;
+        }
+        .buttn:hover{
+            color: #3498db;
         }
         .sample1{
             font-size: 25px;
-            margin-left: 50px;
         }
         </style>
     <head>
         <title>َHALL BOOKING PAGE</title>
-        <div class="logo">
+        <div class="col-12 offset-10 col-sm-2 align-contents-right">
             <img src="a1b44f98-ca7c-4fd1-915e-13ec5565c21c_200x200.png">
         </div>
     </head>
     <body>
         <form class="major" action="display1.php" method="POST">
-            <div class="sample1">
-                <label for="Block">Select the block:</label>
-                <select name="Block">
-                    <option value="gblock">G-Block</option>
-                    <option value="jblock">J-Block</option>
-                    <option value="ablock">A-Block</option>
-                    <option value="yblock">Y-Block</option>
-                </select>
-            </div>
-            <a>Enter the period number</a>
-            <input type="number" name="pno" placeholder="Period Number">
-            <br>
-            <div class="sample">
-                <a>Enter the day</a>
-                <input type="day" name="day" placeholder="Day"><br>
-                <a>Enter the date</a>
-                <input type="date" name="date" placeholder="Date"><br>
-                <a>Enter your Class Code</a>
-                <input type='text' name='class' placeholder="Class"><br>
-                <a>Enter staff name</a>
-                <input type='text' name='Staff_name' placeholder="Staff Name"><br>
-            </div>
-            <div class="col-12 offset-2 col-sm-4 align-contents-center">
-                <input type="submit" name="Enter" value="ENTER">
+            <div class="container">
+                <div class="row row-content">
+                    <div class="col-12 offset-3 col-sm-8 align-contents-center">
+                        <div class="sample1">
+                            <label for="Block">Select the block:</label>
+                            <select name="Block">
+                                <option value="gblock">G-Block</option>
+                                <option value="jblock">J-Block</option>
+                                <option value="ablock">A-Block</option>
+                                <option value="yblock">Y-Block</option>
+                            </select>
+                        </div>
+                        <br>
+                        <a>Enter the period number</a>
+                        <input type="number" name="pno" placeholder="Period Number">
+                        <br><br>
+                        <div class="sample">
+                            <a>Enter the day</a>
+                            <input type="day" name="day" placeholder="Day"><br><br>
+                            <a>Enter the date</a>
+                            <input type="date" name="date" placeholder="Date"><br><br>
+                            <a>Enter your Class Code</a>
+                            <input type='text' name='class' placeholder="Class"><br><br>
+                            <a>Enter staff name</a>
+                            <input type='text' name='Staff_name' placeholder="Staff Name"><br><br>
+                        </div>
+                        <div class="col-12 offset-2 col-sm-4 align-contents-center">
+                            <button class="buttn" type="submit" name="Enter">ENTER</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </body>

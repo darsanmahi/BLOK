@@ -30,12 +30,12 @@
             transition: 0.35s;
             opacity: 1;
         }
-        a{
+        .one1 a{
             text-decoration: none;
             display: inline-block;
             padding: 8px 16px;
         }
-        a:hover {
+        .one1 a:hover {
             background-color: #ddd;
             color: black;
             transition: 0.5s;
@@ -71,7 +71,7 @@
                             <a href="issuereported.php">Issues reported</a>
                         </div>
                         <div class="col-12">
-                            <a>Add Free Periods</a><br><br>
+                            <h2>Add Free Periods</h2><br>
                             <form class="add" action='addfree.php' method="POST">
                                 <a>Enter the date </a>
                                 <input type='date' name='date' placeholder="Date"><br><br>
@@ -95,8 +95,10 @@
                                 <button type="submit">Free it</button>
                             </form>
                             <br>
-                            <a href="hallissue.php">Having Any Issues in this Hall?</a><br><br>
-                            <a href="category.php" class="previous">&laquo; Go Back</a>
+                            <div class='one1'>
+                                <a href="hallissue.php">Having Any Issues in this Hall?</a><br><br>
+                                <a href="category.php" class="previous">&laquo; Go Back</a>
+                            </div>
                         </div>
                     </div>
                 </div>
