@@ -22,7 +22,16 @@
        }
        else
        {
-           $error="INCORRECT CREDENTIALS!!!";
+           $q1=mysqli_query($db,"SELECT * from logininfoh where username='$uname' && password='$password'");
+           $rc=mysqli_num_rows($q1);
+           if($rc==true)
+           {
+               header("Location: hallissuedisp.php");
+           }
+           else
+           {
+               $error="INCORRECT CREDENTIALS!!!";
+           }
        }
    }
 

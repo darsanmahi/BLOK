@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
             /*background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);*/
             background-repeat: no-repeat;
             background-size: cover;
-            color: black;
-            margin-top: auto;
-            font-size:20px;
             text-align: center;
-            font-weight: 10px;
+            padding: 50px 0px 0px 0px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
+        .one1{
+            font-size: 20px;
+        }
+        .navbar-dark{
+            background-color: #191919;
+        }
     </style>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand mr-auto" href="#">BLOK</a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
     <?php
         session_start();
         $hno=$_SESSION['res'];
         $hno1=$hno['hallnumber'];
+        ?>
+        <div class='one1'>
+        <?php
         echo '<header class="jumbotron">Your Permanent Class is '.$hno1;
         echo '</header>';
         $db1=mysqli_connect("localhost","root","","hallbookingauthority");
@@ -72,6 +97,10 @@
                     echo '<br>';
                 }
             }
+            ?>
+            </div>
+            <?php
         }
     ?>
+    </body>
 </html>

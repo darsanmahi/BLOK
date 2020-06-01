@@ -6,36 +6,15 @@
 <style>
     @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
     body{
-        background-image: url(blur-calm-waters-dawn-daylight-395198.jpg);
+        background-image: url(sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         padding: 100px;
     }
-    .major{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-        .major a {
-            font-size: 25px;
-            color: black;
-        }
-        .major input{
-            width: 200px;
-            border-color:#3498db;
-            border-radius: 16px;
-            padding: 10px;
-            margin-top: 30px;
-        }
-        .button{
-            cursor: pointer;
-        }
-        .sample1{
-            font-size: 25px;
-            margin-top: 50px;
-        }
-        .navbar-dark{
-            background-color: #191919;
-        }
+    .navbar-dark{
+       background-color: #191919;
+    }
 </style>
 <head>
     <title>Cancel Booking</title>
@@ -57,36 +36,45 @@
                     </div>
             </div>
         </nav>
-    <form class="major" action="cancel1.php" method="POST">
-        <div class="container">
-            <div class="row row-content">
-                <div class="col-12 offset-3 col-sm-8 align-contents-center">
-                    <div class="sample1">
-                        <label for="Block">Select the block:</label>
-                        <select name="Block">
-                            <option value="gblock">G-Block</option>
-                            <option value="jblock">J-Block</option>
-                            <option value="ablock">A-Block</option>
-                            <option value="yblock">Y-Block</option>
-                        </select>
-                        <br>
-                    </div>
-                    <a>Enter the hall number</a>
-                    <input type="text" name="hno" placeholder="Hall Number">
-                    <br>
-                    <div class="sample">
-                        <a>Enter the period number</a>
-                        <input type="number" name="pno" placeholder="Period Number"><br>
-                        <a>Enter the date</a>
-                        <input type="date" name="date" placeholder="Date"><br>
-                    </div>
-                    <div class="col-12 offset-2 col-sm-4">
-                        <input type="submit" name="Enter" value="ENTER">
-                    </div>
+    <div class="col-12 col-md-9">
+        <form class="major" action="cancel1.php" method="POST">
+            <div class="col-12 offset-3 align-contents-center">
+                <h2>Cancel Booking</h2><br>
+                    <div class="form-group row">
+                        <label for="Block" class="col-form-label col-12 col-md-2">Block</label>
+                            <div class="col-md-3">
+                                <select name="Block" class="form-control">
+                                    <option value="gblock">G-Block</option>
+                                    <option value="jblock">J-Block</option>
+                                    <option value="ablock">A-Block</option>
+                                    <option value="yblock">Y-Block</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for='hallnumber' class="col-12 col-md-2 col-form-label">Hall Number</label>
+                            <div class="col-md-3">
+                                <input type="text" id="classcode" class="form-control" name="hno" placeholder="Hall Number">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for='period' class="col-12 col-md-2 col-form-label">Period Number</label>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" id="period" name="pno" placeholder="Period Number">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for='date' class="col-12 col-md-2 col-form-label">Date</label>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" id="date" name="date">
+                            </div>
+                        </div>
+                        <div class="col-12 offset-2 col-sm-4 align-contents-center">
+                            <button class="btn btn-primary" type="submit" name="Enter">Cancel Booking</button>
+                        </div>
                 </div>
-            </div>
-        <div>
-    </form>
+        </form>
+    </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

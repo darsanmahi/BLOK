@@ -29,7 +29,7 @@
         </header>
         <div class="container">
             <div class="row row-content">
-                <div class='col-5 offset-3 main'>
+                <div class='col-5 offset-3 main align-content-end'>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-chevron-left"></i><a href='booking_display.php'> My Bookings</a></li>
                         <li><i class="fa fa-book"></i> <a href='search.php'> Book New Hall</a></li>
@@ -37,7 +37,7 @@
                     </ul>
                     <br>
                 </div>
-                <div class='col-5 offset-3 one'>
+                <div class='col-5 offset-3 one align-content-end'>
                     <a href="logout.php"><button type="button" class="btn btn-default btn-md">
                     <i class="fa fa-sign-out"></i> Log Out
                     </button></a>

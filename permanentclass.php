@@ -6,45 +6,10 @@
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            /*background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);*/
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: black;
             margin-top: auto;
             padding: 50px 0px 0px 0px;
             text-align: center;
-            font-weight: 10px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
-        }
-        .add input[type='date'],input[type='number']{
-            border-radius: 8px;
-            padding: 8px 4px 10px;
-        }
-        .add button[type="submit"]{
-            background-color: white;
-            color: black;
-            text-align: center;
-            border: 2px solid black;
-            padding: 4px 12px;
-        }
-        .add button[type="submit"]:hover{
-            background-color: gray;
-            transition: 0.35s;
-            opacity: 1;
-        }
-        .one1 a{
-            text-decoration: none;
-            display: inline-block;
-            padding: 8px 16px;
-        }
-        .one1 a:hover {
-            background-color: #ddd;
-            color: black;
-            transition: 0.5s;
-        }
-        .previous {
-            background-color: black;
-            color: white;
         }
         .navbar-dark{
             background-color: #191919;
@@ -94,35 +59,43 @@
                         <div class="col-12 offset-10 col-sm-3 align-content-right">
                             <a href="issuereported.php">Issues reported</a>
                         </div>
-                        <div class="col-12">
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <form action="cancel1.php" method="POST">
+                        <div class="col-12 offset-2 align-contents-center">
                             <h2>Add Free Periods</h2><br>
-                            <form class="add" action='addfree.php' method="POST">
-                                <a>Enter the date </a>
-                                <input type='date' name='date' placeholder="Date"><br><br>
-                                <a>Enter the period </a>
-                                <div class="sample1">
-                                <label for="period"></label>
-                                <select name="period">
-                                    <option value="morningsession">Entire Morning Session</option>
-                                    <option value="noonsession">Entire Noon Session</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                </select>
+                            <div class="form-group row">
+                                <label for="period" class="col-form-label offset-4 col-12 col-md-1">Period</label>
+                                <div class="col-md-3">
+                                    <select name="period" class="form-control">
+                                        <option value="morningsession">Entire Morning Session</option>
+                                        <option value="noonsession">Entire Noon Session</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
                                 </div>
-                                <br>
-                                <button type="submit">Free it</button>
-                            </form>
-                            <br>
-                            <div class='one1'>
-                                <a href="hallissue.php">Having Any Issues in this Hall?</a><br><br>
+                            </div>
+                            <div class="form-group row">
+                                <label for='date' class="col-12 col-md-1 offset-4 col-form-label">Date</label>
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" id="date" name="date">
+                                </div>
+                            </div>
+                            <div class="col-12 offset-4 col-sm-4 align-contents-center">
+                                <button class="btn btn-primary" type="submit" name="Enter">Free it</button>
                             </div>
                         </div>
+                    </form>
+                    <br>
+                    <div class="col-12 offset-4 col-sm-8">
+                        <a href="hallissue.php">Having any Issues with this Hall?</a>
                     </div>
                 </div>
             </body>

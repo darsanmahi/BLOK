@@ -13,11 +13,6 @@
             padding: 50px 0px 0px 0px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
-        .issue input[type='text']{
-            text-align: left;
-            border: 1.5px solid black;
-            padding: 10px 20px 200px 4px;
-        }
         .navbar-dark{
             background-color: #191919;
         }
@@ -49,11 +44,20 @@
                 echo '</h4>';
                 echo '</header>';
                 ?>
-            <form class='issue' action="issuefile.php" method="POST">
-                <div class="col-12 offset-4 col-sm-6">
-                    <a>Enter the Issue you faced</a><br><br>
-                    <input type='text' name='issue' class='issue' placeholder="Enter the Issue"><br><br>
-                    <button type='submit' name='issbtn'>Submit Issue</button>
+            <form class='issue1' action="issuefile.php" method="POST">
+                <div class="form-group row">
+                    <label for='Feedback' class="col-md-1 offset-md-1 col-form-label">Issue</label>
+                    <div class="col-md-9">
+                        <textarea class="form-control" id='Feedback' name="Feedback" placeholder="Enter the Issue" rows="8"></textarea>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="submit" class="btn btn-primary">
+                                Submit Issue
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </form>
             <script src="node_modules/jquery/dist/jquery.min.js"></script>
