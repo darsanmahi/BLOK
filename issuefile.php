@@ -8,10 +8,9 @@
             background-repeat: no-repeat;
             background-size: cover;
             color: black;
-            margin-top: auto;
-            font-size:20px;
             text-align: center;
             font-weight: 10px;
+            padding: 80px 0px 0px 0px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
         a{
@@ -27,7 +26,27 @@
             background-color: black;
             color: white;
         }
+        .navbar-dark{
+            background-color: #191919;
+        }
 </style>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand mr-auto" href="#">BLOK</a>
+                        <div class="collapse navbar-collapse" id="Navbar">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                                <li class="nav-item"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 <?php
     session_start();
     $hno=$_SESSION['res'];
@@ -59,4 +78,5 @@
         }
     }
 ?>
+</body>
 </html>

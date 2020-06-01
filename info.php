@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
@@ -9,12 +11,35 @@
             background-size: cover;
             color: black;
             text-align:center;
-            margin-top: 300px;
-            font-size:20px;
-            font-weight: 10px;
+            font-size: 15px;
+            padding: 100px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
+        .navbar-dark{
+            background-color: #191919;
+        }
     </style>
+    <body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand mr-auto" href="#">BLOK</a>
+                    <div class="collapse navbar-collapse" id="Navbar">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="category.php">Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#">Book New Hall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="booking_display.php">Previous Bookings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="permanentclass.php">Permanent Class</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </nav>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
     <?php session_start();
         $bname=$_SESSION['block'];
         $pno=$_SESSION['pno'];
@@ -49,9 +74,6 @@
             {echo mysqli_error($db1);}
             if(!mysqli_query($db2,$qu5))
             {echo mysqli_error($db2);}
-            ?>
-            <a href=category.php class="back"><input type="submit" value="Back"></a>
-            <?php
             }
         }
     ?>

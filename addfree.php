@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <style>
+        @import url("https://unpkg.com/@popperjs/core@2");
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
             background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             color: black;
-            margin-top: auto;
-            font-size:20px;
-            text-align: center;
-            font-weight: 10px;
+            padding: 80px 0px 0px 0px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
-        .sub{
-             display: inline-block;
-             border-radius: 4px;
-             background-color: white;
-             border: 2px solid black;
-             color: black;
-             text-align: center;
-             cursor: pointer;
+        .navbar-dark{
+            background-color: #191919;
         }
-        .sub:hover span:after{
-            opacity: 1;
-            right:0 ;
+        p{
+            font-size: 20px;
         }
     </style>
-    <?php
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand mr-auto" href="#">BLOK</a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                        <li class="nav-item"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-id-card"></i> Permanent Class</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <?php
         session_start();
         $hno=$_SESSION['res'];
         $hno1=$hno['hallnumber'];
@@ -47,6 +60,7 @@
         {echo 'Connection Falied';}
         else
         {
+            echo '<div class="col-12 offset-4 col-sm-6 align-contents-center">';
             if($per=='morningsession')
             {
                 $q1="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',1,'$date','$block','Free')";
@@ -57,10 +71,7 @@
                 $r2=mysqli_query($db1,$q2);
                 $r3=mysqli_query($db1,$q3);
                 $r4=mysqli_query($db1,$q4);
-                echo '<p style="text-align=center;margin-top:300px;margin-left:60px">Status of Hall Updated Successfully</p>';
-                    ?>
-                    <a href="category.php"><input type="submit" class='sub' value="Back"></a>
-                    <?php
+                echo '<p>Status of Hall Updated Successfully</p>';
             }
             elseif($per=='noonsession')
             {
@@ -72,11 +83,7 @@
                 $r2=mysqli_query($db1,$q2);
                 $r3=mysqli_query($db1,$q3);
                 $r4=mysqli_query($db1,$q4);
-                echo '<div class="col-12 col-sm-8 align-contents-center">';
                 echo '<p>Status of Hall Updated Successfully</p>';
-                    ?>
-                    <a href="category.php"><input type="submit" class='sub' value="Back"></a>
-                    <?php
             }
             else
             {
@@ -86,13 +93,14 @@
                 {echo mysqli_error($db1);}
                 else
                 {
-                    echo '<p style="text-align=center;margin-top:300px;margin-left:60px">Status of Hall Updated Successfully</p>';
-                    ?>
-                    <a href="permanentclass.php"><input type="submit" class='sub' value="Back"></a>
-                    </div>
-                    <?php
+                    echo '<p>Status of Hall Updated Successfully</p>';
                 }
             }
         }
-    ?>
+        ?>
+        </div>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
 </html>
