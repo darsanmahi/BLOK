@@ -13,7 +13,7 @@
             margin-top: auto;
             text-align: center;
             font-weight: 10px;
-            padding: 60px 0px 0px 0px;
+            padding: 80px 0px 0px 0px;
             font-size: 15px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
@@ -30,10 +30,10 @@
                 <a class="navbar-brand mr-auto" href="#"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="category.php">Home</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="search.php">Book New Hall</a></li>
-                            <li class="nav-item"><a class="nav-link" href="booking_display.php">Previous Bookings</a></li>
-                            <li class="nav-item"><a class="nav-link" href="permanentclass.php">Permanent Class</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
                         </ul>
                     </div>
             </div>
@@ -110,12 +110,21 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
                     <?php
                 }
                 elseif($rc==0)
-                {echo "NO HALLS AVAILABLE";}
+                {
+                    echo "NO HALLS AVAILABLE";
+                    ?>
+                    <div class="row row-content">
+                        <div class="col-12 offset-3 col-sm-6">
+                            <a href="search.php" class="btn btn-primary" role="button"><i class="fa fa-chevron-left"></i> Back</a>
+                        </div>
+                    </div>
+                    <?php
+                }
         }
     ?>
+    </div>
  </body>
 </html>

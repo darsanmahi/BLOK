@@ -7,6 +7,8 @@
      <style>
         /*@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");*/
          body{
+             background-repeat: no-repeat;
+             background-size: cover;
              font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
              padding: 80px;
          }

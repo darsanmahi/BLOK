@@ -36,35 +36,37 @@
                     </div>
             </div>
         </nav>
-    <div class="col-12 col-md-9">
-        <form class="major" action="cancel1.php" method="POST">
-            <div class="col-12 offset-3 align-contents-center">
-                <h2>Cancel Booking</h2><br>
-                    <div class="form-group row">
-                        <label for="Block" class="col-form-label col-12 col-md-2">Block</label>
-                            <div class="col-md-3">
-                                <select name="Block" class="form-control">
-                                    <option value="gblock">G-Block</option>
-                                    <option value="jblock">J-Block</option>
-                                    <option value="ablock">A-Block</option>
-                                    <option value="yblock">Y-Block</option>
-                                </select>
-                            </div>
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-12 col-md-9">
+            <form class="major" action="cancel1.php" method="POST">
+                <div class="col-12 align-contents-center">
+                    <h2>Cancel Booking</h2><br>
+                        <div class="form-group row">
+                            <label for="Block" class="col-form-label col-12 col-md-3">Block</label>
+                                <div class="col-sm-3">
+                                    <select name="Block" class="form-control">
+                                        <option value="gblock">G-Block</option>
+                                        <option value="jblock">J-Block</option>
+                                        <option value="ablock">A-Block</option>
+                                        <option value="yblock">Y-Block</option>
+                                    </select>
+                                </div>
                         </div>
                         <div class="form-group row">
-                            <label for='hallnumber' class="col-12 col-md-2 col-form-label">Hall Number</label>
+                            <label for='hallnumber' class="col-12 col-md-3 col-form-label">Hall Number</label>
                             <div class="col-md-3">
                                 <input type="text" id="classcode" class="form-control" name="hno" placeholder="Hall Number">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for='period' class="col-12 col-md-2 col-form-label">Period Number</label>
+                            <label for='period' class="col-12 col-md-3 col-form-label">Period Number</label>
                             <div class="col-md-3">
                                 <input type="number" class="form-control" id="period" name="pno" placeholder="Period Number">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for='date' class="col-12 col-md-2 col-form-label">Date</label>
+                            <label for='date' class="col-12 col-md-3 col-form-label">Date</label>
                             <div class="col-md-3">
                                 <input type="date" class="form-control" id="date" name="date">
                             </div>
@@ -72,8 +74,10 @@
                         <div class="col-12 offset-2 col-sm-4 align-contents-center">
                             <button class="btn btn-primary" type="submit" name="Enter">Cancel Booking</button>
                         </div>
+                    </div> 
                 </div>
-        </form>
+            </form>
+        </div>
     </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>

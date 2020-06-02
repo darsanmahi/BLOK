@@ -6,13 +6,23 @@
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
+            background-image: url(iStock-916563360.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
             margin-top: auto;
             padding: 50px 0px 0px 0px;
-            text-align: center;
+            color: white;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
+        }
+        .jumbotron{
+            background-color: transparent;
         }
         .navbar-dark{
             background-color: #191919;
+        }
+        .one a{
+            color: white;
+            font-size: 20px;
         }
     </style>
 <?php
@@ -50,52 +60,54 @@
                     </div>
                 </nav>
                 <?php
-                echo '<header class="jumbotron"><h4>Your Permanent Class is '.$res['hallnumber'];
-                echo '</h4>';
+                echo '<header class="jumbotron offset-1"><h1>Your Permanent Class is '.$res['hallnumber'];
+                echo '</h1>';
                 echo '</header>';
                 ?>
                 <div class="container">
                     <div class="row row-content">
-                        <div class="col-12 offset-10 col-sm-3 align-content-right">
-                            <a href="issuereported.php">Issues reported</a>
+                        <div class="col-12">
+                        <form action="cancel1.php" method="POST">
+                                <h2>Add Free Periods</h2><br>
+                                <div class="form-group row">
+                                    <label for="period" class="col-form-label col-12 col-md-1">Period</label>
+                                    <div class="col-md-3">
+                                        <select name="period" class="form-control">
+                                            <option value="morningsession">Entire Morning Session</option>
+                                            <option value="noonsession">Entire Noon Session</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for='date' class="col-12 col-md-1 col-form-label">Date</label>
+                                    <div class="col-md-3">
+                                        <input type="date" class="form-control" id="date" name="date">
+                                    </div>
+                                </div>
+                                <div class="col-12 offset-1 col-sm-4 align-contents-center">
+                                    <button class="btn btn-primary" type="submit" name="Enter">Free it</button>
+                                </div>
+                        </form>
+                    </div>
+                    <div class="row row-content">
+                        <div class="col-12 col-sm-8 one">
+                            <br>
+                            <a href="hallissue.php">Having any Issues with this Hall<i class="fa fa-question-circle"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-9">
-                    <form action="cancel1.php" method="POST">
-                        <div class="col-12 offset-2 align-contents-center">
-                            <h2>Add Free Periods</h2><br>
-                            <div class="form-group row">
-                                <label for="period" class="col-form-label offset-4 col-12 col-md-1">Period</label>
-                                <div class="col-md-3">
-                                    <select name="period" class="form-control">
-                                        <option value="morningsession">Entire Morning Session</option>
-                                        <option value="noonsession">Entire Noon Session</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for='date' class="col-12 col-md-1 offset-4 col-form-label">Date</label>
-                                <div class="col-md-3">
-                                    <input type="date" class="form-control" id="date" name="date">
-                                </div>
-                            </div>
-                            <div class="col-12 offset-4 col-sm-4 align-contents-center">
-                                <button class="btn btn-primary" type="submit" name="Enter">Free it</button>
-                            </div>
+                    <div class="row row-content">
+                        <div class="col-12 col-sm-8 one">
+                            <br>
+                            <a href="issuereported.php"> Reported Issues!<i class="fa fa-warning"></i></a>
                         </div>
-                    </form>
-                    <br>
-                    <div class="col-12 offset-4 col-sm-8">
-                        <a href="hallissue.php">Having any Issues with this Hall?</a>
                     </div>
                 </div>
             </body>
