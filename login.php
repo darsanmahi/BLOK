@@ -73,13 +73,13 @@
     }
   </style>
   <head>
-    <title>َLOGIN</title>
+    <title>Login</title>
     <div class="logo">
         <img src="a1b44f98-ca7c-4fd1-915e-13ec5565c21c_200x200.png">
     </div>
   </head>
   <body>  
-      <form class="box" action="display.php" method="post">
+      <form class="box" action="login.php" method="post">
         <h1>Login</h1><div class="error"><?php echo $error; ?></div>
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">

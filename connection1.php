@@ -2,13 +2,20 @@
    $error='';
    $success='';
    $db=mysqli_connect("localhost","root","","student");
+   session_start();
    if(isset($_POST['username']))
    {
         $uname=$_POST["username"];
+        $_SESSION['username']=$uname;
    }
    if(isset($_POST['password']))
    {
         $password=$_POST['password'];
+   }
+   if(isset($_POST['lab']))
+   {
+        $lname=$_POST['lab'];
+        $_SESSION['lab']=$lname;
    }
    if(isset($_POST['login_btn']))
    {

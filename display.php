@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
+            padding:50px 0px 0px 0px;
             text-align:center;
-            color: white;
-            background-color: #212121;
-            margin-left: 300px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        table {
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        border-collapse: collapse;
-        }
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-        .is{
-            margin-left: -200px;
-            padding: 10px;
+        .navbar-dark{
+            background-color: #191919;
         }
     </style>
     <?php
         session_start();
-        $lname=$_POST['lab'];
-        $_SESSION['lab']=$lname;
+        $lname=$_SESSION['lab'];
         $db2=mysqli_connect("localhost","root","",$lname);
         if(!$db2)
         {echo "CONNECTION FALIED";}
         else
         {
             ?>
-            <table style="width:80%">
-                <tr>
-                    <th>SYSTEM NUMBER</th>
-                    <th>NO.OF.ISSUES</th>
-                    <th>CURRENT STATUS</th>
-                </tr>
-            <?php
-            $query="select * from systems";
-            $result=mysqli_query($db2,$query);
-            while($rows=mysqli_fetch_array($result))
-            {
-                echo '<tr>';
-                echo '<td>';
-                echo $rows['system_no'];
-                echo '</td>';
-                echo '<td>';
-                echo $rows['issues'];
-                echo '</td>';
-                echo '<td>';
-                echo $rows['current'];
-                echo '</td>';
-            }
-            echo '</table>';
-            echo "<form class='is' action='report.php' method='post'>
-            <input type='submit' value='Report an Issue' name='issue_btn'>
-            </form>";
+            <body>
+                <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand mr-auto" href="main.html">BLOK</a>
+                        <div class="collapse navbar-collapse" id="Navbar">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-keyboard-o"></span> Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="report.php"><span class="fa fa-exclamation fa-lg"></span> Report Issue</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <header class="jumbotron">
+                    <h2>STATUS CHECKING PAGE OF <?php echo $lname; ?></h2>
+                </header>
+                <div class="row row-content">
+                    <div class="col-12 offset-10 col-sm-2">
+                        <div class="btn">
+                            <a href="logout1.php" class="btn btn-primary"><i class="fa fa-sign-out"></i>Log out</a>
+                        </div>
+                    </div>
+                    <div class="col-12 offset-3 col-sm-6">
+                        <h3>&nbsp;Status of the Systems</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>SYSTEM NUMBER</th>
+                                        <th>NO.OF.ISSUES</th>
+                                        <th>CURRENT STATUS</th>
+                                    </tr>
+                                </thead>
+                                <?php
+                                $query="select * from systems";
+                                $result=mysqli_query($db2,$query);
+                                while($rows=mysqli_fetch_array($result))
+                                {       
+                                    echo '<tr>';
+                                    echo '<td>';
+                                    echo $rows['system_no'];
+                                    echo '</td>';
+                                    echo '<td>';
+                                    echo $rows['issues'];
+                                    echo '</td>';
+                                    echo '<td>';
+                                    echo $rows['current'];
+                                    echo '</td>';
+                                }
+                            echo '</table>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
+            echo '</body>';
         }
     ?>
 </html>
