@@ -6,7 +6,7 @@
 <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            /*background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);*/
+            background-image: url(volodymyr-hryshchenko-inI8GnmS190-unsplash.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             color: black;
@@ -15,6 +15,9 @@
         }
         .navbar-dark{
             background-color: #191919;
+        }
+        .jumbotron{
+            background-color: transparent;
         }
 </style>
 <?php
@@ -40,26 +43,28 @@
                 </div>
             </nav>
                 <?php
-                echo '<header class="jumbotron"><h4 class="offset-4">Your Permanent Class is '.$hno1;
-                echo '</h4>';
+                echo '<header class="jumbotron"><h2 class="offset-4">Your Permanent Class is '.$hno1;
+                echo '</h2>';
                 echo '</header>';
                 ?>
+            <div class="container">
             <form class='issue1' action="issuefile.php" method="POST">
                 <div class="form-group row">
-                    <label for='Feedback' class="col-md-1 offset-md-1 col-form-label">Issue</label>
-                    <div class="col-md-9">
-                        <textarea class="form-control" id='Feedback' name="Feedback" placeholder="Enter the Issue" rows="8"></textarea>
+                    <label for='Feedback' class="col-md-1 col-form-label">Issue</label>
+                    <div class="col-md-5">
+                        <textarea class="form-control" id='Feedback' name="Feedback" placeholder="Enter the Issue" rows="5"></textarea>
                     </div>
                     </div>
                     <div class="form-group row">
-                        <div class="offset-md-2 col-md-10">
-                            <button type="submit" class="btn btn-primary">
+                        <div class="offset-md-1 col-md-10">
+                            <button type="submit" class="btn btn-danger">
                                 Submit Issue
                             </button>
                         </div>
                     </div>
                 </div>
             </form>
+            </div>
             <script src="node_modules/jquery/dist/jquery.min.js"></script>
             <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
             <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

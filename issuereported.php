@@ -6,18 +6,18 @@
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            /*background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);*/
+            background-image: url(franck-v-a8y2NqVoVTQ-unsplash.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            text-align: center;
             padding: 50px 0px 0px 0px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
-        .one1{
-            font-size: 20px;
-        }
         .navbar-dark{
             background-color: #191919;
+        }
+        .jumbotron{
+            background-color: transparent;
+            font-size: 20px;
         }
     </style>
     <body>
@@ -41,22 +41,24 @@
         session_start();
         $hno=$_SESSION['res'];
         $hno1=$hno['hallnumber'];
-        ?>
-        <div class='one1'>
-        <?php
-        echo '<header class="jumbotron">Your Permanent Class is '.$hno1;
-        echo '</header>';
+        echo '<header class="jumbotron offset-1"><h1>Your Permanent Class is '.$hno1;
+        echo '</h1></header>';
         $db1=mysqli_connect("localhost","root","","hallbookingauthority");
         if(!$db1)
         {echo 'Connection Failed';}
         else
         {
+            ?>
+            <div class="container">
+            <?php
             $q2="SELECT * from issue";
             $r2=mysqli_query($db1,$q2);
             $rc2=mysqli_num_rows($r2);
             if($rc2==0)
             {
-                echo 'No Issues have been reported';
+                echo '<div class="row row-header">';
+                echo '<h2>No Issues have been reported</h2>';
+                echo '</div>';
             }
             else
             {
@@ -65,16 +67,26 @@
                 $rc=mysqli_num_rows($r);
                 if($rc==0)
                 {
-                    echo 'No Issues have been rectified';
+                    echo '<div class="row row-header">';
+                    echo '<h3>No Issues have been rectified</h3>';
                     echo '<br>';
+                    echo '</div>';
                 }
                 else
                 {
-                    echo 'Rectified Issues';
+                    echo '<div class="row row-header">';
+                    echo '<h2><strong>Rectified Issues</strong><h2>';
                     echo '<br>';
-                    $res=mysqli_fetch_assoc($r);
-                    echo 'Issue: '.$res['issues'];
-                    echo '<br>';
+                    echo '</div>';
+                    echo '<div class="row row-content">';
+                    echo '<div class="col-12">';
+                    while($res=mysqli_fetch_assoc($r))
+                    {
+                        echo 'Issue: '.$res['issues'];
+                        echo '<br>';
+                    }
+                    echo '</div>';
+                    echo '</div>';
                 }
                 $q1="SELECT issues from issue where status='unrectified'";
                 $r1=mysqli_query($db1,$q1);
@@ -84,17 +96,25 @@
                     ?>
                     <div class="row-header">
                     <?php
-                    echo 'All the Issues have been rectified';
+                    echo '<h3>All the Issues have been rectified</h3>';
                     echo '<br>';
                     echo '</div>';
                 }
                 else
                 {
-                    echo ' Un Rectified Issues';
+                    echo '<div class="row row-header">';
+                    echo '<h2><strong>UnRectified Issues</strong></h2>';
                     echo '<br>';
-                    $res=mysqli_fetch_assoc($r1);
-                    echo 'Issue: '.($res['issues']);
-                    echo '<br>';
+                    echo '</div>';
+                    echo '<div class="row row-content">';
+                    echo '<div class="col-12">';
+                    while($res=mysqli_fetch_assoc($r1))
+                    {
+                        echo 'Issue: '.$res['issues'];
+                        echo '<br>';
+                    }
+                    echo '</div>';
+                    echo '</div>';
                 }
             }
             ?>

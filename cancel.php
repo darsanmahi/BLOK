@@ -36,6 +36,13 @@
                     </div>
             </div>
         </nav>
+        <?php
+        session_start();
+        $arrg1=$_SESSION['arrg'];
+        $arrj1=$_SESSION['arrj'];
+        $arrg=array_unique($arrg1);
+        $arrj=array_unique($arrj1);
+        ?>
     <div class="container">
         <div class="row row-content">
             <div class="col-12 col-md-9">
@@ -56,7 +63,18 @@
                         <div class="form-group row">
                             <label for='hallnumber' class="col-12 col-md-3 col-form-label">Hall Number</label>
                             <div class="col-md-3">
-                                <input type="text" id="classcode" class="form-control" name="hno" placeholder="Hall Number">
+                                <select name='hno' id="hallnumber" class="form-control">
+                                    <?php
+                                        foreach($arrg as $item)
+                                        {
+                                            echo "<option value='$item'>$item</option>";
+                                        }
+                                        foreach($arrj as $item)
+                                        {
+                                            echo "<option value='$item'>$item</option>";
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">

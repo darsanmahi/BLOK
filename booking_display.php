@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
      <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
      <style>
-        /*@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");*/
          body{
+             background-image: url(jess-bailey-l3N9Q27zULw-unsplash.jpg);
              background-repeat: no-repeat;
-             background-size: cover;
+             background-size:auto;
              font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
              padding: 80px;
          }
@@ -48,6 +48,9 @@
         ?>
         <div class="container">
         <?php
+        $arrg=array();
+        $i=0;
+        $arrj=array();
         if($rc!=0)
         {
             ?>
@@ -59,7 +62,7 @@
             while($res=mysqli_fetch_array($r))
             {
                 ?>
-                <div class="col-12 col-sm-2 align-contents-center">
+                <div class="col-sm-2 align-self-end">
                 <?php
                 echo 'HALL NUMBER: '.$res['hallnumber'];
                 echo '<br>';
@@ -70,12 +73,15 @@
                 echo 'DAY: '.$res['day'];
                 echo '<br>';
                 echo '<br>';
+                $arrg[$i]=$res['hallnumber'];
+                $i++;
                 ?>
-                <div class="col-12 col-sm-2 align-contents-center">
+                <div class="col-sm-2 align-contents-center">
                 </div>
                 </div>
                 <?php
             }
+            $i=0;
             ?>
             </div>
             <?php
@@ -107,6 +113,8 @@
                 echo '<br>';
                 echo 'DAY: '.$res1['day'];
                 echo '<br>';echo '<br>';
+                $arrj[$i]=$res1['hallnumber'];
+                $i++;
                 ?>
                 <div class="col-12 col-sm-2 align-contents-center">
                 </div>
@@ -117,6 +125,8 @@
         else
         {echo '<div class="row row-header"><h4>No Halls booked in J-Block</h4></div>';}
         echo '<a href="cancel.php">Cancel Any Booking?</a>';
+        $_SESSION['arrg']=$arrg;
+        $_SESSION['arrj']=$arrj;
         ?>
         </div>
         <?php

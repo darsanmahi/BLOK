@@ -46,7 +46,7 @@
         $hll=$_POST['hall_no'];
         $day=$_SESSION['day'];
         $date=$_SESSION['date'];
-        $dept=$_SESSION['class'];
+        $dept=$_SESSION['classcode'];
         $uname=$_SESSION['usernames'];
         $db1=mysqli_connect("localhost","root","",$bname);
         $db2=mysqli_connect("localhost","root","","hallbookingauthority");
