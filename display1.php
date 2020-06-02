@@ -13,7 +13,7 @@
             margin-top: auto;
             text-align: center;
             font-weight: 10px;
-            padding: 100px;
+            padding: 60px 0px 0px 0px;
             font-size: 15px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
@@ -31,7 +31,7 @@
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item"><a class="nav-link" href="category.php">Home</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="#">Book New Hall</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="search.php">Book New Hall</a></li>
                             <li class="nav-item"><a class="nav-link" href="booking_display.php">Previous Bookings</a></li>
                             <li class="nav-item"><a class="nav-link" href="permanentclass.php">Permanent Class</a></li>
                         </ul>
@@ -41,7 +41,6 @@
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    </body>
     <?php
         session_start();
         $bname=$_POST['Block'];
@@ -57,11 +56,12 @@
             $pno=$_POST['pno'];
             $_SESSION['pno']=$pno;
             $_SESSION['block']=$bname;
-            $day=$_POST['day'];
-            $dept=$_POST['class'];
+            $day1=strtotime($date);
+            $day=date("l",$day1);
+            $dept=$_POST['classcode'];
             $_SESSION['day']=$day;
             $_SESSION['date']=$date;
-            $_SESSION['class']=$dept;
+            $_SESSION['classcode']=$dept;
             $q1="SELECT hallnumber from booking where date='$date' and period='$pno'";
             $q2="SELECT hallnumber from tempfreeperiod where period='$pno' and date='$date' and block='$bname' and status='Free'";
             if( $date=="" || $day=="" || $pno=="" || $dept="" || $year="")
@@ -96,12 +96,26 @@
                     {
                         echo '<li>'.$rows['hallnumber'].'</li>';
                     }
-                    echo '<form action="info.php" method="POST">
-                    <input type="text" name="hall_no" placeholder="Hall Number">
-                    <button class="one1" type="submit" name="book_btn">Book</button>
-                    </form>';
+                    ?>
+                    <div class="container">
+                        <div class="row row-content">
+                            <div class="col-12 col-sm-9">
+                                <form action="info.php" method="POST">
+                                    <div class="form-group row">
+                                        <input type="text" class="form-control offset-6 col-md-3" id="hall_no" name="hall_no" placeholder="Hall Number">
+                                        <button class="btn btn-primary" type="submit" name="book_btn"> Book</button>
+                                    </div>
+                                    <div class="form-group row">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
                 }
                 elseif($rc==0)
                 {echo "NO HALLS AVAILABLE";}
-            }
+        }
     ?>
+ </body>
+</html>

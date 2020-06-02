@@ -70,12 +70,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for='day' class="col-12 col-md-2 col-form-label">Day</label>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" name="day" id="day" placeholder="Day">
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for='classcode' class="col-12 col-md-2 col-form-label">Class Code</label>
                             <div class="col-md-3">
                                 <input type="number" id="classcode" class="form-control" name="classcode" placeholder="Class Code">
