@@ -66,7 +66,7 @@
     .box button[type = "submit"]:hover{
       background: #2ecc71;
     }  
-    .error{
+    .error,.one{
       color: white;
     }
   </style>
@@ -81,6 +81,13 @@
             <h1>Login</h1><div class="error"><?php echo $error; ?></div>
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
+            <div class="one">
+              <label for="lab">Select the lab:</label>
+                <select name="lab">
+                    <option value="grd">GRD Lab</option>
+                    <option value="spl">Software Programming Lab-1</option>
+                </select>
+            </div>
             <button type="submit" name="login_btn" class='btn' >LET ME IN</button>
         </form>
     </body>

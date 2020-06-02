@@ -7,36 +7,14 @@
             background-image: url(blue-background-bricks-close-up-colors-of-autumn-2096622.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            color: black;
+            padding: 50px 0px 0px 0px;
             text-align:center;
-            font-size:20px;
             font-weight: 10px;
+            margin-top: 10px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
-        .notif {
-            background-color: #555;
-            color: white;
-            text-decoration: none;
-            padding: 15px 26px;
-            position: relative;
-            display: inline-block;
-            border-radius: 2px;
-            margin-top:40px;
-            margin-left: 1000px;
-        }
-
-        .notif:hover {
-            background: white;
-        }
-
-        .notif .badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            padding: 5px 10px;
-            border-radius: 50%;
-            background: white;
-            color: black;
+        .navbar-dark{
+            background-color: #191919;
         }
     </style>
     <head>
@@ -44,8 +22,7 @@
     </head>
     <?php
         session_start();
-        $lname=$_POST['lab'];
-        $_SESSION['lab']=$lname;
+        $lname=$_SESSION['lab'];
         $db1=mysqli_connect("localhost","root","",$lname);
         if(!$db1)
         {echo 'CONNECTION FAILED';}
@@ -56,10 +33,15 @@
             $rc=mysqli_num_rows($r);
     ?>
     <body>
-        <a href="iss_disp1.php" class="notif">
-            <span>Notifications</span>
-            <span class='badge' id="notif_badge"></span>
-        </a>
+        <div class="container">
+            <div class="btn btn-group offset-9 align-content-end">
+                <a href="iss_disp1.php" class="btn btn-primary">
+                    <span>Notifications</span>
+                    <span class='badge' id="notif_badge"></span>
+                </a>
+                <a href="logout2.php" class="btn btn-warning"><i class="fa fa-sign-out"></i>Log Out</a>
+            </div>
+        </div>
         <script type="text/javascript">
         function loadDoc() {
             setInterval(function(){
