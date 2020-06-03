@@ -30,7 +30,16 @@
            }
            else
            {
-               $error="INCORRECT CREDENTIALS!!!";
+                $q1=mysqli_query($db,"SELECT * from secretaries where username='$uname' && password='$password'");
+                $rc=mysqli_num_rows($q1);
+                if($rc==true)
+                {
+                    header("Location: category1.php");
+                }
+                else
+                {
+                    $error="INCORRECT CREDENTIALS";
+                }
            }
        }
    }

@@ -37,6 +37,11 @@
                                 <li class="nav-item"><a class="nav-link" href="iss_disp2.php"><span class="fa fa-keyboard-o"></span> Home</a></li>
                                 <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-exclamation fa-lg"></span> Rectify Issue</a></li>
                             </ul>
+                            <span>
+                                <a href="logout1.php"><button type="button" class="btn btn-light btn-md">
+                                <i class="fa fa-sign-out"></i> Log Out
+                                </button></a>
+                            </span>
                         </div>
                     </div>
                 </nav>

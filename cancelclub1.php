@@ -28,10 +28,9 @@
                 <a class="navbar-brand mr-auto" href="#"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
-                            <li class="nav-item"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category1.php"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="search1.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="booking_display1.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
                         </ul>
                         <span>
                             <a href="logout.php"><button type="button" class="btn btn-light btn-md">
@@ -52,7 +51,7 @@
     {echo 'CONNECTION FAILED';}
     else
     {
-        $q1="SELECT * from booking where hallnumber='$hno' and date='$date' and period='$pno'";
+        $q1="SELECT * from bookingclub where hallnumber='$hno' and date='$date' and period='$pno'";
         $rc=mysqli_query($db,$q1);
         $res=mysqli_num_rows($rc);
         if ($res==0)
@@ -61,7 +60,7 @@
         }
         else
         {
-            $q2="DELETE from booking where hallnumber='$hno' and date='$date' and period='$pno'";
+            $q2="DELETE from bookingclub where hallnumber='$hno' and date='$date' and period='$pno'";
             $r1=mysqli_query($db,$q2);
             echo '<p style="text-align:center;font-size:20px;margin-top:200px;">YOUR BOOKING HAS BEEN CANCELLED SUCCESSFULLY</p>';
         }

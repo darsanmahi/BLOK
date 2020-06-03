@@ -20,6 +20,7 @@
         {
             $val=4;
         }
+        $_SESSION['Block']=$bl;
     }
     $_SESSION['val']=$val;
 ?>

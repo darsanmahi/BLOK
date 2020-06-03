@@ -1,4 +1,4 @@
-<?php include('conn1.php');
+<?php include('connclub.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,10 +34,9 @@
                 <a class="navbar-brand mr-auto" href="#"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="./category.php"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./category1.php"><i class="fa fa-home"></i> Home</a></li>
                             <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-book"></i> Book New Hall</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./booking_display1.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
                         </ul>
                         <span>
                             <a href="logout.php"><button type="button" class="btn btn-light btn-md">
@@ -50,7 +49,7 @@
         <div class="container">
             <div class="row row-content">
                 <div class="col-12 col-md-9">
-                    <form action="display1.php" method="POST">
+                    <form action="displayclub.php" method="POST">
                         <div class="col-12 offset-2 align-contents-center">
                             <h2>Book New Hall</h2><br>
                             <div class="form-group row">
@@ -77,15 +76,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for='classcode' class="col-12 col-md-2 col-form-label">Class Code</label>
+                                <label for='purpose' class="col-12 col-md-2 col-form-label">Purpose</label>
                                 <div class="col-md-3">
-                                    <input type="number" id="classcode" class="form-control" name="classcode" placeholder="Class Code">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for='sname' class="col-12 col-md-2 col-form-label">Staff Name</label>
-                                <div class="col-md-3">
-                                    <input type="text" name="sname" class="form-control" id="sname" placeholder="Staff Name">
+                                    <textarea id="purpose" class="form-control" name="purpose" placeholder="Purpose" rows="2"></textarea>
                                 </div>
                             </div>
                             <div class="col-12 offset-1 col-sm-4 align-contents-center">

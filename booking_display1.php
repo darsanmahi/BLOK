@@ -25,10 +25,9 @@
                 <a class="navbar-brand mr-auto"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i>  Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category1.php"><i class="fa fa-home"></i>  Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="search1.php"><i class="fa fa-book"></i> Book New Hall</a></li>
                             <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
-                            <li class="nav-item"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
                         </ul>
                         <span>
                             <a href="logout.php"><button type="button" class="btn btn-light btn-md">
@@ -47,7 +46,7 @@
         <?php
         $uname=$_SESSION['usernames'];
         $db=mysqli_connect("localhost","root","","gblock");
-        $q="SELECT * from booking where roll_no='$uname'";
+        $q="SELECT * from bookingclub where roll_no='$uname'";
         $r=mysqli_query($db,$q);
         $rc=mysqli_num_rows($r);
         ?>
@@ -67,7 +66,7 @@
             while($res=mysqli_fetch_array($r))
             {
                 ?>
-                <div class="col-sm-2 align-self-end">
+                <div class="col-sm-3 align-self-end">
                 <?php
                 echo 'HALL NUMBER: '.$res['hallnumber'];
                 echo '<br>';
@@ -76,6 +75,8 @@
                 echo 'DATE: '.$res['date'];
                 echo '<br>';
                 echo 'DAY: '.$res['day'];
+                echo '<br>';
+                echo 'PURPOSE: '.$res['reason'];
                 echo '<br>';
                 echo '<br>';
                 $arrg[$i]=$res['hallnumber'];
@@ -94,7 +95,7 @@
         else
         {echo '<div class="row row-header"><h4>No Halls booked in G-Block</h4></div>';}
         $db1=mysqli_connect("localhost","root","","jblock");
-        $q1="SELECT * from booking where roll_no='$uname'";
+        $q1="SELECT * from bookingclub where roll_no='$uname'";
         $r1=mysqli_query($db1,$q1);
         $rc1=mysqli_num_rows($r1);
         if($rc1!=0)
@@ -129,7 +130,8 @@
         }
         else
         {echo '<div class="row row-header"><h4>No Halls booked in J-Block</h4></div>';}
-        echo '<a href="cancel.php">Cancel Any Booking?</a>';
+        if($rc1!=0 || $rc!=0)
+        {echo '<a href="cancelclub.php">Cancel Any Booking?</a>';}
         $_SESSION['arrg']=$arrg;
         $_SESSION['arrj']=$arrj;
         ?>
