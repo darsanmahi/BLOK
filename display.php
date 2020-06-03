@@ -36,6 +36,11 @@
                                 <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-keyboard-o"></span> Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="report.php"><span class="fa fa-exclamation fa-lg"></span> Report Issue</a></li>
                             </ul>
+                            <span>
+                                <a href="logout1.php"><button type="button" class="btn btn-light btn-md">
+                                <i class="fa fa-sign-out"></i> Log Out
+                                </button></a>
+                            </span>
                         </div>
                     </div>
                 </nav>
@@ -43,11 +48,6 @@
                     <h2>STATUS CHECKING PAGE OF <?php echo $lname; ?></h2>
                 </header>
                 <div class="row row-content">
-                    <div class="col-12 offset-10 col-sm-2">
-                        <div class="btn">
-                            <a href="logout1.php" class="btn btn-primary"><i class="fa fa-sign-out"></i>Log out</a>
-                        </div>
-                    </div>
                     <div class="col-12 offset-3 col-sm-6">
                         <h3>&nbsp;Status of the Systems</h3>
                         <div class="table-responsive">

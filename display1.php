@@ -35,6 +35,11 @@
                             <li class="nav-item"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
                             <li class="nav-item"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
                         </ul>
+                        <span>
+                            <a href="logout.php"><button type="button" class="btn btn-light btn-md">
+                            <i class="fa fa-sign-out"></i> Log Out
+                            </button></a>
+                        </span>
                     </div>
             </div>
         </nav>
@@ -62,6 +67,9 @@
             $_SESSION['day']=$day;
             $_SESSION['date']=$date;
             $_SESSION['classcode']=$dept;
+            $arrh=array();
+            $i=0;
+            $_SESSION['arrh']=$arrh;
             $q1="SELECT hallnumber from booking where date='$date' and period='$pno'";
             $q2="SELECT hallnumber from tempfreeperiod where period='$pno' and date='$date' and block='$bname' and status='Free'";
             if( $date=="" || $day=="" || $pno=="" || $dept="" || $year="")
@@ -91,10 +99,14 @@
                     {
                         $rcc=mysqli_fetch_assoc($r2);
                         echo '<li>'.$rcc['hallnumber'].'</li>';
+                        $arrh[$i]=$rcc['hallnumber'];
+                        $i++;
                     }
                     while($rows=mysqli_fetch_array($result))
                     {
                         echo '<li>'.$rows['hallnumber'].'</li>';
+                        $arrh[$i]=$rows['hallnumber'];
+                        $i++;
                     }
                     ?>
                     <div class="container">
@@ -102,7 +114,14 @@
                             <div class="col-12 col-sm-9">
                                 <form action="info.php" method="POST">
                                     <div class="form-group row">
-                                        <input type="text" class="form-control offset-6 col-md-3" id="hall_no" name="hall_no" placeholder="Hall Number">
+                                        <select class="form-control offset-6 col-md-3" id="hall_no" name="hall_no" placeholder="Hall Number">
+                                            <?php
+                                                foreach($arrh as $item)
+                                                {
+                                                    echo "<option value='$item'>$item</option>";
+                                                }
+                                            ?>
+                                        </select>
                                         <button class="btn btn-primary" type="submit" name="book_btn"> Book</button>
                                     </div>
                                     <div class="form-group row">

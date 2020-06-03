@@ -39,6 +39,11 @@
                             <li class="nav-item"><a class="nav-link" href="./booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
                             <li class="nav-item"><a class="nav-link" href="./permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
                         </ul>
+                        <span class="offset-1">
+                            <a href="logout.php"><button type="button" class="btn btn-light btn-md">
+                            <i class="fa fa-sign-out"></i> Log Out
+                            </button></a>
+                        </span>
                     </div>
             </div>
         </nav>
