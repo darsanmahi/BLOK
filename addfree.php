@@ -66,7 +66,26 @@
         else
         {
             echo '<div class="col-12 offset-4 col-sm-6 align-contents-center">';
-            if($per=='morningsession')
+            if($per=="entireday")
+            {
+                $q1="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',1,'$date','$block','Free')";
+                $q2="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',2,'$date','$block','Free')";
+                $q3="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',3,'$date','$block','Free')";
+                $q4="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',4,'$date','$block','Free')";
+                $q5="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',5,'$date','$block','Free')";
+                $q6="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',6,'$date','$block','Free')";
+                $q7="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',7,'$date','$block','Free')";
+                $q8="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',8,'$date','$block','Free')";
+                $r1=mysqli_query($db1,$q1);
+                $r2=mysqli_query($db1,$q2);
+                $r3=mysqli_query($db1,$q3);
+                $r4=mysqli_query($db1,$q4);
+                $r5=mysqli_query($db1,$q5);
+                $r6=mysqli_query($db1,$q6);
+                $r7=mysqli_query($db1,$q7);
+                $r8=mysqli_query($db1,$q8);
+            }
+            elseif($per=='morningsession')
             {
                 $q1="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',1,'$date','$block','Free')";
                 $q2="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',2,'$date','$block','Free')";

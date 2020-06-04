@@ -78,6 +78,7 @@
                                     <label for="period" class="col-form-label col-12 col-md-1">Period</label>
                                     <div class="col-md-3">
                                         <select name="period" class="form-control">
+                                            <option value="entireday">Entire Day</option>
                                             <option value="morningsession">Entire Morning Session</option>
                                             <option value="noonsession">Entire Noon Session</option>
                                             <option value="1">1</option>
