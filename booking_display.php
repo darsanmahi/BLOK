@@ -210,7 +210,7 @@
         {echo '<a href="cancel.php">Cancel Any Booking?</a>';}
         $_SESSION['arrg']=$arrg;
         $_SESSION['arrj']=$arrj;
-        $_SESSION['aary']=$arry;
+        $_SESSION['arry']=$arry;
         $_SESSION['arra']=$arra;
         ?>
         </div>

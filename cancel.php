@@ -95,23 +95,44 @@
                                             }
                                             elseif($val==2)
                                             {
-                                                foreach($arrj as $item)
+                                                if($arrj==NULL)
                                                 {
-                                                    echo "<option value='$item'>$item</option>";
+                                                    ?><script>alert("No Halls Booked in J block")</script><?php
                                                 }
-                                            }
-                                            elseif($val==3)
-                                            {
-                                                foreach($arry as $item)
+                                                else
                                                 {
-                                                    echo "<option value='$item'>$item</option>";
+                                                    foreach($arrj as $item)
+                                                    {
+                                                        echo "<option value='$item'>$item</option>";
+                                                    }
                                                 }
                                             }
                                             elseif($val==4)
                                             {
-                                                foreach($aara as $item)
+                                                if($arry==NULL)
                                                 {
-                                                    echo "<option value='$item'>$item</option>";
+                                                    ?><script>alert("No Halls Booked in Y block")</script><?php
+                                                }
+                                                else
+                                                {
+                                                    foreach($arry as $item)
+                                                    {
+                                                        echo "<option value='$item'>$item</option>";
+                                                    }
+                                                }
+                                            }
+                                            elseif($val==3)
+                                            {
+                                                if($arra==NULL)
+                                                {
+                                                    ?><script>alert("No Halls Booked in A block")</script><?php
+                                                }
+                                                else
+                                                {
+                                                    foreach($aara as $item)
+                                                    {
+                                                        echo "<option value='$item'>$item</option>";
+                                                    }
                                                 }
                                             }
                                         ?>

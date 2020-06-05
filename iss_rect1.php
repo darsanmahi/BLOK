@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
 <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
@@ -19,7 +22,7 @@
         session_start();
         $lname=$_SESSION['lab'];
         $db1=mysqli_connect("localhost","root","",$lname);
-        $name=$_POST['m1'];
+        $name=$_POST['systemno'];
         if(!$db1)
         {echo "CONNECTION FAILED!";}
         else
@@ -41,5 +44,8 @@
             }
         }
     ?>
-    <a href="iss_disp1.php"><input type="submit" id="btn" value="Back"/></a>
+    <a href="iss_disp1.php"><button type="submit" class="btn btn-primary" id="btn"><i class="fa fa-chevron-left"></i> Back</button></a>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>
