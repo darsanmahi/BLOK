@@ -47,8 +47,12 @@
         <?php
         $arrg1=$_SESSION['arrg'];
         $arrj1=$_SESSION['arrj'];
+        $arry1=$_SESSION['arry'];
+        $arra1=$_SESSION['arra'];
         $arrg=array_unique($arrg1);
         $arrj=array_unique($arrj1);
+        $aary=array_unique($arry1);
+        $arra=array_unique($arra1);
         ?>
     <div class="container">
         <div class="row row-content">
@@ -92,6 +96,20 @@
                                             elseif($val==2)
                                             {
                                                 foreach($arrj as $item)
+                                                {
+                                                    echo "<option value='$item'>$item</option>";
+                                                }
+                                            }
+                                            elseif($val==3)
+                                            {
+                                                foreach($arry as $item)
+                                                {
+                                                    echo "<option value='$item'>$item</option>";
+                                                }
+                                            }
+                                            elseif($val==4)
+                                            {
+                                                foreach($aara as $item)
                                                 {
                                                     echo "<option value='$item'>$item</option>";
                                                 }

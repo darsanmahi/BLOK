@@ -72,7 +72,7 @@
                 <div class="container">
                     <div class="row row-content">
                         <div class="col-12">
-                        <form action="cancel1.php" method="POST">
+                        <form action="addfree.php" method="POST">
                                 <h2>Add Free Periods</h2><br>
                                 <div class="form-group row">
                                     <label for="period" class="col-form-label col-12 col-md-1">Period</label>
