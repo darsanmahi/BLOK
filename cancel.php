@@ -63,15 +63,13 @@
                         <div class="form-group row">
                             <label for="Block" class="col-form-label col-12 col-md-3">Block</label>
                                 <div class="col-sm-3">
-                                    <select id="Block" name="Block" class="form-control">
+                                    <select id="Block" name="Block" class="form-control" onchange="this.form.submit()">
+                                        <option value="-1"></option>
                                         <option value="gblock">G-Block</option>
                                         <option value="jblock">J-Block</option>
                                         <option value="ablock">A-Block</option>
                                         <option value="yblock">Y-Block</option>
                                     </select>
-                                </div>
-                                <div class="col-sm-2">
-                                    <button class="btn btn-primary" type="submit" name="Enter">Select</button>
                                 </div>
                         </div>
                 </div>
@@ -88,9 +86,16 @@
                                         <?php
                                             if($val==1)
                                             {
-                                                foreach($arrg as $item)
+                                                if($arrg==NULL)
                                                 {
-                                                    echo "<option value='$item'>$item</option>";
+                                                    ?><script>alert("No Halls Booked in G block")</script><?php
+                                                }
+                                                else
+                                                {
+                                                    foreach($arrg as $item)
+                                                    {
+                                                        echo "<option value='$item'>$item</option>";
+                                                    }
                                                 }
                                             }
                                             elseif($val==2)

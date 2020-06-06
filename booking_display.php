@@ -52,47 +52,47 @@
         $rc=mysqli_num_rows($r);
         ?>
         <div class="container">
-        <?php
-        $arrg=array();
-        $i=0;
-        $arrj=array();
-        $arra=array();
-        $arry=array();
-        if($rc!=0)
-        {
-            ?>
-                <div class="row row-header">
-                    <h3>G-Block:</h3>
-                </div>
-                <div class="row row-content">
             <?php
-            while($res=mysqli_fetch_array($r))
+            $arrg=array();
+            $i=0;
+            $arrj=array();
+            $arra=array();
+            $arry=array();
+            if($rc!=0)
             {
                 ?>
-                <div class="col-sm-2 align-self-end">
+                    <div class="row row-header">
+                        <h3>G-Block:</h3>
+                    </div>
+                    <div class="row row-content">
                 <?php
-                echo 'HALL NUMBER: '.$res['hallnumber'];
-                echo '<br>';
-                echo 'PERIOD: '.$res['period'];
-                echo '<br>';
-                echo 'DATE: '.$res['date'];
-                echo '<br>';
-                echo 'DAY: '.$res['day'];
-                echo '<br>';
-                echo '<br>';
-                $arrg[$i]=$res['hallnumber'];
-                $i++;
+                while($res=mysqli_fetch_array($r))
+                {
+                    ?>
+                    <div class="col-sm-2 align-self-end">
+                    <?php
+                    echo 'HALL NUMBER: '.$res['hallnumber'];
+                    echo '<br>';
+                    echo 'PERIOD: '.$res['period'];
+                    echo '<br>';
+                    echo 'DATE: '.$res['date'];
+                    echo '<br>';
+                    echo 'DAY: '.$res['day'];
+                    echo '<br>';
+                    echo '<br>';
+                    $arrg[$i]=$res['hallnumber'];
+                    $i++;
+                    ?>
+                    <div class="col-sm-2 align-contents-center">
+                    </div>
+                    </div>
+                    <?php
+                }
+                $i=0;
                 ?>
-                <div class="col-sm-2 align-contents-center">
-                </div>
                 </div>
                 <?php
             }
-            $i=0;
-            ?>
-            </div>
-            <?php
-        }
         else
         {echo '<div class="row row-header"><h4>No Halls booked in G-Block</h4></div>';}
         $db1=mysqli_connect("localhost","root","","jblock");
@@ -129,6 +129,7 @@
                 <?php
             }
             $i=0;
+            ?></div><?php
         }
         else
         {echo '<div class="row row-header"><h4>No Halls booked in J-Block</h4></div>';}
@@ -166,10 +167,11 @@
                 <?php
             }
             $i=0;
+            ?></div><?php
         }
         else
         {echo '<div class="row row-header"><h4>No Halls booked in Y-Block</h4></div>';}
-        $db3=mysqli_connect("localhost","root","","jblock");
+        $db3=mysqli_connect("localhost","root","","ablock");
         $q3="SELECT * from booking where roll_no='$uname'";
         $r3=mysqli_query($db3,$q3);
         $rc3=mysqli_num_rows($r3);
@@ -203,6 +205,7 @@
                 <?php
             }
             $i=0;
+            ?></div><?php
         }
         else
         {echo '<div class="row row-header"><h4>No Halls booked in A-Block</h4></div>';}
