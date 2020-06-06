@@ -67,6 +67,8 @@
             $_SESSION['day']=$day;
             $_SESSION['date']=$date;
             $_SESSION['classcode']=$dept;
+            $sname=$_POST['sname'];
+            $_SESSION['sname']=$sname;
             $arrh=array();
             $i=0;
             $_SESSION['arrh']=$arrh;

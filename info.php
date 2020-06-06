@@ -28,10 +28,10 @@
                 <a class="navbar-brand mr-auto" href="#"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="category.php">Home</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="search.php">Book New Hall</a></li>
-                            <li class="nav-item"><a class="nav-link" href="booking_display.php">Previous Bookings</a></li>
-                            <li class="nav-item"><a class="nav-link" href="permanentclass.php">Permanent Class</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="search.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="booking_display.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="permanentclass.php"><i class="fa fa-id-card"></i> Permanent Class</a></li>
                         </ul>
                         <span>
                             <a href="logout.php"><button type="button" class="btn btn-light btn-md">
@@ -53,6 +53,7 @@
         $date=$_SESSION['date'];
         $dept=$_SESSION['classcode'];
         $uname=$_SESSION['usernames'];
+        $sname=$_SESSION['sname'];
         $db1=mysqli_connect("localhost","root","",$bname);
         $db2=mysqli_connect("localhost","root","","hallbookingauthority");
         if(!$db1)
@@ -73,7 +74,7 @@
             {
                 echo "THE HALL YOU SELECTED ".$hll;
             echo '<br>';
-            $qu2="INSERT INTO booking (hallnumber,period,date,day,class_code,roll_no) values ('$hll','$pno','$date','$day','$dept','$uname')";
+            $qu2="INSERT INTO booking (hallnumber,period,date,day,class_code,roll_no,staff_name) values ('$hll','$pno','$date','$day','$dept','$uname','$sname')";
             $qu5="UPDATE tempfreeperiod set status='Booked' where hallnumber='$hll'";
             if(!mysqli_query($db1,$qu2))
             {echo mysqli_error($db1);}
