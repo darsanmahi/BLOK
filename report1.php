@@ -15,6 +15,9 @@
             margin-top: 220px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
+        .navbar-dark{
+            background-color: #191919;
+        }
     </style>
     <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
