@@ -63,14 +63,16 @@
                         <div class="form-group row">
                             <label for="Block" class="col-form-label col-12 col-md-3">Block</label>
                                 <div class="col-sm-3">
-                                    <select id="Block" name="Block" class="form-control" onchange="this.form.submit()">
-                                        <option value="-1"></option>
+                                    <select id="Block" name="Block" class="form-control">
                                         <option value="gblock">G-Block</option>
                                         <option value="jblock">J-Block</option>
                                         <option value="ablock">A-Block</option>
                                         <option value="yblock">Y-Block</option>
                                     </select>
                                 </div>
+                            <div class="col-sm-2">
+                                <button type="submit" class="btn btn-primary">Select</button>
+                            </div>
                         </div>
                 </div>
             </form>
