@@ -6,7 +6,7 @@
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            background-image: url(Website-Design-Background-1.jpg);
+            background-image: url(./images/Website-Design-Background-1.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;

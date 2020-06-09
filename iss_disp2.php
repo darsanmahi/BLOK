@@ -6,7 +6,7 @@
 <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            background-image: url(blue-background-bricks-close-up-colors-of-autumn-2096622.jpg);
+            background-image: url(./images/blue-background-bricks-close-up-colors-of-autumn-2096622.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             padding: 50px 0px 0px 0px;

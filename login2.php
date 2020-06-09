@@ -9,7 +9,7 @@
     @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
     body{
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      background-image: url(black-ball-point-pen-with-brown-spiral-notebook-733852.jpg);
+      background-image: url(./images/black-ball-point-pen-with-brown-spiral-notebook-733852.jpg);
       background-size:cover;
       background-repeat: no-repeat;
     }

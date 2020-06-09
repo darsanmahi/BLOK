@@ -7,7 +7,7 @@
 <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);
+            background-image: url(./images/green-leaf-plant-in-white-flower-pot-1022923.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             color: black;

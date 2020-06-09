@@ -56,7 +56,7 @@
                             <div class="form-group row">
                                 <label for="Block" class="col-form-label col-12 col-md-2">Block</label>
                                 <div class="col-md-3">
-                                    <select name="Block" class="form-control">
+                                    <select name="Block" class="form-control" required>
                                         <option value="gblock">G-Block</option>
                                         <option value="jblock">J-Block</option>
                                         <option value="ablock">A-Block</option>
@@ -67,25 +67,25 @@
                             <div class="form-group row">
                                 <label for='period' class="col-12 col-md-2 col-form-label">Period Number</label>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" id="period" name="pno" placeholder="Period Number">
+                                    <input type="number" min='1' max='9' class="form-control" id="period" name="pno" placeholder="Period Number" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for='date' class="col-12 col-md-2 col-form-label">Date</label>
                                 <div class="col-md-3">
-                                    <input type="date" class="form-control" id="date" name="date">
+                                    <input type="date" class="form-control" id="date" name="date" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for='classcode' class="col-12 col-md-2 col-form-label">Class Code</label>
                                 <div class="col-md-3">
-                                    <input type="number" id="classcode" class="form-control" name="classcode" placeholder="Class Code">
+                                    <input type="number" id="classcode" class="form-control" name="classcode" placeholder="Class Code" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for='sname' class="col-12 col-md-2 col-form-label">Staff Name</label>
                                 <div class="col-md-3">
-                                    <input type="text" name="sname" class="form-control" id="sname" placeholder="Staff Name">
+                                    <input type="text" name="sname" class="form-control" id="sname" placeholder="Staff Name" required>
                                 </div>
                             </div>
                             <div class="col-12 offset-1 col-sm-4 align-contents-center">

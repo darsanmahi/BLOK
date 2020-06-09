@@ -6,7 +6,7 @@
      <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
      <style>
          body{
-             background-image: url(jess-bailey-l3N9Q27zULw-unsplash.jpg);
+             background-image: url(./images/jess-bailey-l3N9Q27zULw-unsplash.jpg);
              background-repeat: no-repeat;
              background-size:auto;
              font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -22,7 +22,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand mr-auto"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
+                <a class="navbar-brand mr-auto"><img src="./images/3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item"><a class="nav-link" href="category1.php"><i class="fa fa-home"></i>  Home</a></li>

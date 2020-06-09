@@ -6,7 +6,7 @@
      <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
      <style>
          body{
-             background-image: url(jess-bailey-l3N9Q27zULw-unsplash.jpg);
+             background-image: url(./images/jess-bailey-l3N9Q27zULw-unsplash.jpg);
              background-repeat: no-repeat;
              background-size:auto;
              font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -22,7 +22,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand mr-auto"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
+                <a class="navbar-brand mr-auto"><img src="./images/3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i>  Home</a></li>
@@ -71,13 +71,13 @@
                     ?>
                     <div class="col-sm-2 align-self-end">
                     <?php
-                    echo 'HALL NUMBER: '.$res['hallnumber'];
+                    echo '<strong>HALL NUMBER: </strong>'.$res['hallnumber'];
                     echo '<br>';
-                    echo 'PERIOD: '.$res['period'];
+                    echo '<strong>PERIOD: </strong>'.$res['period'];
                     echo '<br>';
-                    echo 'DATE: '.$res['date'];
+                    echo '<strong>DATE: </strong>'.$res['date'];
                     echo '<br>';
-                    echo 'DAY: '.$res['day'];
+                    echo '<strong>DAY: </strong>'.$res['day'];
                     echo '<br>';
                     echo '<br>';
                     $arrg[$i]=$res['hallnumber'];
@@ -112,13 +112,13 @@
                 ?>
                 <div class="col-12 col-sm-2 align-contents-center">
                 <?php
-                echo 'HALL NUMBER: '.$res1['hallnumber'];
+                echo '<strong>HALL NUMBER: </strong>'.$res1['hallnumber'];
                 echo '<br>';
-                echo 'PERIOD: '.$res1['period'];
+                echo '<strong>PERIOD: </strong>'.$res1['period'];
                 echo '<br>';
-                echo 'DATE: '.$res1['date'];
+                echo '<strong>DATE: </strong>'.$res1['date'];
                 echo '<br>';
-                echo 'DAY: '.$res1['day'];
+                echo '<strong>DAY: </strong>'.$res1['day'];
                 echo '<br>';echo '<br>';
                 $arrj[$i]=$res1['hallnumber'];
                 $i++;
@@ -150,13 +150,13 @@
                 ?>
                 <div class="col-12 col-sm-2 align-contents-center">
                 <?php
-                echo 'HALL NUMBER: '.$res2['hallnumber'];
+                echo '<strong>HALL NUMBER: </strong>'.$res2['hallnumber'];
                 echo '<br>';
-                echo 'PERIOD: '.$res2['period'];
+                echo '<strong>PERIOD: </strong>'.$res2['period'];
                 echo '<br>';
-                echo 'DATE: '.$res2['date'];
+                echo '<strong>DATE: </strong>'.$res2['date'];
                 echo '<br>';
-                echo 'DAY: '.$res2['day'];
+                echo '<strong>DAY: </strong>'.$res2['day'];
                 echo '<br>';echo '<br>';
                 $arry[$i]=$res2['hallnumber'];
                 $i++;
@@ -188,13 +188,13 @@
                 ?>
                 <div class="col-12 col-sm-2 align-contents-center">
                 <?php
-                echo 'HALL NUMBER: '.$res3['hallnumber'];
+                echo '<strong>HALL NUMBER: </strong>'.$res3['hallnumber'];
                 echo '<br>';
-                echo 'PERIOD: '.$res3['period'];
+                echo '<strong>PERIOD: </strong>'.$res3['period'];
                 echo '<br>';
-                echo 'DATE: '.$res3['date'];
+                echo '<strong>DATE: </strong>'.$res3['date'];
                 echo '<br>';
-                echo 'DAY: '.$res3['day'];
+                echo '<strong>DAY: </strong>'.$res3['day'];
                 echo '<br>';echo '<br>';
                 $arra[$i]=$res3['hallnumber'];
                 $i++;

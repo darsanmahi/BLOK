@@ -149,13 +149,13 @@
                         <div class="form-group row">
                             <label for='period' class="col-12 col-md-3 col-form-label">Period Number</label>
                             <div class="col-md-3">
-                                <input type="number" class="form-control" id="period" name="pno" placeholder="Period Number">
+                                <input type="number" class="form-control" id="period" min="1" max="9" name="pno" placeholder="Period Number" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for='date' class="col-12 col-md-3 col-form-label">Date</label>
                             <div class="col-md-3">
-                                <input type="date" class="form-control" id="date" name="date">
+                                <input type="date" class="form-control" id="date" name="date" required>
                             </div>
                         </div>
                         <div class="col-12 offset-2 col-sm-4 align-contents-center">

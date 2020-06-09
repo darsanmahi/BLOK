@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      background-image: url(wall-clock-at-5-50-707582.jpg);
+      background-image: url(./images/wall-clock-at-5-50-707582.jpg);
       background-size:cover;
       background-repeat: no-repeat;
     }

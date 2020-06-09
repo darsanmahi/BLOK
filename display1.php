@@ -6,7 +6,7 @@
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
         body{
-            background-image: url(green-leaf-plant-in-white-flower-pot-1022923.jpg);
+            background-image: url(./images/green-leaf-plant-in-white-flower-pot-1022923.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             color: black;
@@ -27,7 +27,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand mr-auto" href="#"><img src="3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
+                <a class="navbar-brand mr-auto" href="#"><img src="./images/3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
@@ -73,6 +73,7 @@
             $i=0;
             $_SESSION['arrh']=$arrh;
             $q1="SELECT hallnumber from booking where date='$date' and period='$pno'";
+            $q3="SELECT hallnumber from bookingclub where date='$date' and period='$pno'";
             $q2="SELECT hallnumber from tempfreeperiod where period='$pno' and date='$date' and block='$bname' and status='Free'";
             if( $date=="" || $day=="" || $pno=="" || $dept="" || $year="")
             {
@@ -83,9 +84,11 @@
             $rc1=mysqli_num_rows($r1);
             $r2=mysqli_query($db2,$q2);
             $rc2=mysqli_num_rows($r2);
-            if($rc1>0)
+            $r3=mysqli_query($db1,$q3);
+            $rc3=mysqli_num_rows($r3);
+            if($rc1>0||$rc3>0)
             {
-                $query="SELECT hallnumber from {$day} where hallnumber not in (SELECT hallnumber from booking where date='$date' and period='$pno') and startingperiod='$pno'";
+                $query="SELECT hallnumber from {$day} where hallnumber not in (SELECT hallnumber from booking where date='$date' and period='$pno' UNION SELECT hallnumber from bookingclub where date='$date' and period='$pno' ) and startingperiod='$pno'";
             }
             elseif($rc1==0)
             {
