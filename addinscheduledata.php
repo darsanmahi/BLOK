@@ -44,8 +44,8 @@
         </nav>
         <div class="container">
             <div class="row row-content">
-                <div class="col-12 col-md-6">
-        <?php
+                <div class="col-12 col-md-8">
+            <?php
             if(isset($_POST['add_btn'])){
                 $blk=$_POST['Block'];
                 $db=mysqli_connect("localhost","root","",$blk);
@@ -89,17 +89,20 @@
                     }
                 }
                 elseif($rc==0){
-                    echo '<h2>Invalid Input</h2>';
+                    echo '<h2>No Such Hall '.$hno.' with the period '.$pno.' is free</h2>';
                     ?>
                         </div>
                         </div>
                         <div class="row row-content">
-                        <a href="alterschedule.php" type="button" class="btn btn-primary ml-5"><i class="fa fa-chevron-left"></i> Back </a>
+                        <a href="alterschedule.php" type="button" class="btn btn-primary offset-2"><i class="fa fa-chevron-left"></i> Back </a>
                         </div>
                         <?php
                 }
             }
         ?>
         </div>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
