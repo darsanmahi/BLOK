@@ -62,7 +62,7 @@ include ('addsec.php');
                                 <label for="username" class="col-form-label">Username</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" >
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -78,7 +78,7 @@ include ('addsec.php');
                                 <label for="clubname" class="col-form-label">Club Name</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="clubname" id="clubname" class="form-control" placeholder="Club Name" > 
+                                <input type="text" name="clubname" id="clubname" class="form-control" placeholder="Club Name"> 
                             </div>
                         </div>
                         <div class="col-12 offset-1 col-md-5">

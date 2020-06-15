@@ -12,14 +12,23 @@
         $cc=$_POST['clubname'];
     }
     if(isset($_POST['reg'])){
-        $q="INSERT into secretaries(username,password,club_name) values ('$uname','$pword','$cc')";
-        $res=mysqli_query($db,$q);
-        if($res){
+        if($pword=' '){
             ?>
             <script>
-                alert("User has been added successfully");
+                alert("Password Required");
             </script>
             <?php
+        }
+        else{
+            $q="INSERT into secretaries(username,password,club_name) values ('$uname','$pword','$cc')";
+            $res=mysqli_query($db,$q);
+            if($res){
+                ?>
+                <script>
+                    alert("User has been added successfully");
+                </script>
+                <?php
+            }
         }
     }
     if(isset($_POST['rem'])){

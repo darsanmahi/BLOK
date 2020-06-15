@@ -62,7 +62,7 @@ include ('addrep.php');
                                 <label for="username" class="col-form-label">Username</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" >
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -78,7 +78,7 @@ include ('addrep.php');
                                 <label for="classcode" class="col-form-label">Class Code</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="number" min="1" max="37" name="classcode" id="classcode" class="form-control" placeholder="Class Code" > 
+                                <input type="number" min="1" max="37" name="classcode" id="classcode" class="form-control" placeholder="Class Code" required > 
                             </div>
                         </div>
                         <div class="col-12 offset-1 col-md-5 align-content-center">
