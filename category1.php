@@ -24,6 +24,9 @@
             background-color: transparent;
         }
     </style>
+    <head>
+         <title>Welcome to BLOK</title>
+     </head>
     <?php
         session_start();
         $uname=$_SESSION['usernames'];

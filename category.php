@@ -24,6 +24,9 @@
             background-color: transparent;
         }
     </style>
+    <head>
+         <title>Welcome to BLOK</title>
+     </head>
     <body>
         <header class="jumbotron">
             <h2>BLOK-The Digital Hall Booking System</h2>

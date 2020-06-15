@@ -25,6 +25,9 @@
             font-size: 20px;
         }
     </style>
+    <head>
+        <title>Permanent Class</title>
+    </head>
 <?php
     session_start();
     $uname=$_SESSION['usernames'];

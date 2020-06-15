@@ -19,7 +19,13 @@ include ('addsec.php');
         .navbar-dark{
             background-color: #191919;
         }
+        .btn-group{
+            padding: 15px 0px 0px 0px;
+        }
     </style>
+    <head>
+        <title>Add or Remove Secretary</title>
+    </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">
@@ -31,8 +37,8 @@ include ('addsec.php');
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item"><a class="nav-link" href="hallissuedisp.php"><i class="fa fa-home"></i> Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="displayrecords.php"><i class="fa fa-book"></i> View Bookings</a></li>
-                            <li class="nav-item"><a class="nav-link" href="adduser.php"><i class="fa fa-user-circle-o"></i> Add User</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-user-circle"></i> Add Secretary</a></li>
+                            <li class="nav-item"><a class="nav-link" href="adduser.php"><i class="fa fa-user-circle-o"></i> Add/Remove User</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-user-circle"></i> Add/Remove Secretary</a></li>
                             <li class="nav-item"><a class="nav-link" href="bookadmin.php"><i class="fa fa-book"></i> Book Hall</a></li>
                             <li class="nav-item"><a class="nav-link" href="alterschedule.php"><i class="fa fa-building-o"></i> Alter Schedule</a></li>
                         </ul>
@@ -75,10 +81,11 @@ include ('addsec.php');
                                 <input type="text" name="clubname" id="clubname" class="form-control" placeholder="Club Name" > 
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="offset-2 col-md-5">
+                        <div class="col-12 offset-1 col-md-5">
+                            <div class="btn-group">
                                 <br>
                                 <button type="submit" name="reg" class="btn btn-primary">Add Me</button>
+                                <button type="submit" name="rem" class="btn btn-warning">Remove Me </button>
                             </div>
                         </div>
                     </form>

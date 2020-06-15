@@ -20,6 +20,9 @@
             font-size: 20px;
         }
     </style>
+    <head>
+        <title>Reported Issues</title>
+    </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">

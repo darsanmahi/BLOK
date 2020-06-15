@@ -19,6 +19,9 @@
             background-color: #191919;
         }
     </style>
+    <head>
+         <title>Cancel Booking</title>
+     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">

@@ -23,6 +23,9 @@
             margin-top: 200px;
         }
     </style>
+    <head>
+        <title>Hall Booked</title>
+    </head>
     <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">

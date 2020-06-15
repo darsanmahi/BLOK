@@ -16,6 +16,9 @@
             background-color: #191919;
         }
     </style>
+    <head>
+        <title>System Issues</title>
+    </head>
     <?php
         session_start();
         $lname=$_SESSION['lab'];

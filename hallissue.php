@@ -20,6 +20,10 @@
             background-color: transparent;
         }
 </style>
+<head>
+    <title>Hall Issues</title>
+</head>
+    
 <?php
     session_start();    
     $hno=$_SESSION['res'];

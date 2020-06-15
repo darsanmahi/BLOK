@@ -20,7 +20,7 @@
         }
     </style>
     <head>
-        <script src="https://kit.fontawesome.com/574686131c.js"></script>
+        <title>System Issues</title>
     </head>
     <?php
         session_start();

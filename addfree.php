@@ -23,6 +23,7 @@
     </style>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Add Free Periods</title>
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">

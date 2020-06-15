@@ -15,6 +15,9 @@
             background-color: #191919;
         }
     </style>
+    <head>
+         <title>Check Status</title>
+     </head>
     <?php
         session_start();
         $lname=$_SESSION['lab'];

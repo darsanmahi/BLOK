@@ -18,6 +18,9 @@
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
     </style>
+    <head>
+        <title>System Issues</title>
+    </head>
     <?php
         session_start();
         $lname=$_SESSION['lab'];

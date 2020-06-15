@@ -22,5 +22,28 @@
             <?php
         }
     }
+    if(isset($_POST['rem'])){
+        $q1="SELECT * from representative where username='$uname' and password='$pword'";
+        $res1=mysqli_query($db,$q1);
+        $rc=mysqli_num_rows($res1);
+        if($rc==0){
+            ?>
+            <script>
+                alert("No representative have been enrolled");
+            </script>
+            <?php
+        }
+        else{
+        $q="DELETE from representative where username='$uname' and password='$pword'";
+        $res=mysqli_query($db,$q);
+        if($res){
+            ?>
+            <script>
+                alert("User has been removed successfully");
+            </script>
+            <?php
+        }
+        }
+    }
 ?>
 </html>
