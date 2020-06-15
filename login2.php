@@ -23,7 +23,7 @@
   <head>
     <title>Login</title>
     <div class="logo">
-     <img src="a1b44f98-ca7c-4fd1-915e-13ec5565c21c_200x200.png">
+     <img src="./images/a1b44f98-ca7c-4fd1-915e-13ec5565c21c_200x200.png">
     </div>
   </head>
     <body>
