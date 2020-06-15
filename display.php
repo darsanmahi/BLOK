@@ -50,6 +50,7 @@
                 <header class="jumbotron">
                     <h2>STATUS CHECKING PAGE OF <?php echo $lname; ?></h2>
                 </header>
+                <div class="container">
                 <div class="row row-content">
                     <div class="col-12 offset-3 col-sm-6">
                         <h3>&nbsp;Status of the Systems</h3>
@@ -81,6 +82,7 @@
                             echo '</table>';
                         echo '</div>';
                     echo '</div>';
+                echo '</div>';
                 echo '</div>';
             echo '</body>';
         }

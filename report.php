@@ -41,6 +41,7 @@
                 </div>
             </div>
        </nav>
+       <div class="container">
         <div class="row row-content">
             <div class="col-12">
             </div>
@@ -52,14 +53,14 @@
             <div class="col-12 offset-4 col-md-8">
                 <form action="report1.php" method="POST">
                     <div class="form-group row">
-                        <label for='systemno' class="col-md-2 col-form-label">System Number</label>
-                        <div class="col-md-3">
+                        <label for='systemno' class="col-md-3 col-form-label">System Number</label>
+                        <div class="col-md-4">
                             <input type="text" class="form-control" id='systemno' name="systemno" placeholder="System Number">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for='issue' class="col-md-2 col-form-label">Issue</label>
-                        <div class="col-md-3">
+                        <label for='issue' class="col-md-3 col-form-label">Issue</label>
+                        <div class="col-md-4">
                             <textarea class="form-control" id='issue' name="issue" rows="4" placeholder="Issue"></textarea>
                         </div>
                     </div>
@@ -71,5 +72,6 @@
                 </form>
             </div>
         </div>
+       </div>
     </body>
 </html>
