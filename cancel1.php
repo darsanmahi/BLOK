@@ -60,7 +60,7 @@
         $res=mysqli_num_rows($rc);
         if ($res==0)
         {
-            echo '<p style="text-align:center;font-size:20px;margin-top:200px;">There is no booking of the hall '.$hno;
+            echo '<p style="text-align:center;font-size:20px;margin-top:200px;">There is no booking of the hall '.$hno.' for period '.$pno.' on '.$date;
         }
         else
         {

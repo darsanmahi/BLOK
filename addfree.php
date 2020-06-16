@@ -11,7 +11,8 @@
             background-repeat: no-repeat;
             background-size: cover;
             color: black;
-            padding: 80px 0px 0px 0px;
+            text-align: center;
+            padding: 300px 0px 0px 0px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;            
         }
         .navbar-dark{
@@ -31,7 +32,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand mr-auto" href="#"><img src="./iamges/3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
+                <a class="navbar-brand mr-auto" href="#"><img src="./images/3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                 <div class="collapse navbar-collapse" id="Navbar">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="category.php"><i class="fa fa-home"></i> Home</a></li>
@@ -66,7 +67,7 @@
         {echo 'Connection Falied';}
         else
         {
-            echo '<div class="col-12 offset-4 col-sm-6 align-contents-center">';
+            echo '<div class="col-12 offset-3 col-sm-6 align-contents-center">';
             if($per=="entireday")
             {
                 $q1="INSERT into tempfreeperiod(hallnumber,period,date,block,status) values ('$hno1',1,'$date','$block','Free')";

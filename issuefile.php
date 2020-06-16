@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial scale=1,shrink-to-fit=no">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    
 <html>
     <style>
         @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
@@ -17,10 +21,6 @@
             text-decoration: none;
             display: inline-block;
             padding: 8px 16px;
-        }
-        a:hover {
-            background-color: #ddd;
-            color: black;
         }
         .previous {
             background-color: black;
@@ -62,7 +62,7 @@
     $st='unrectified';
     echo '<header class="jumbotron">Your Permanent Class is '.$hno1;
     echo '</header>';
-    $issue=$_POST['issue'];
+    $issue=$_POST['Feedback'];
     $db1=mysqli_connect("localhost","root","","hallbookingauthority");
     if(!$db1)
     {echo 'Connection Failed';}

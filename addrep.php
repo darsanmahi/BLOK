@@ -12,7 +12,7 @@
         $cc=$_POST['classcode'];
     }
     if(isset($_POST['reg'])){
-        if($pword=' '){
+        if($pword==' '){
             ?>
             <script>
                 alert("Password Required");
@@ -32,7 +32,7 @@
         }
     }
     if(isset($_POST['rem'])){
-        $q1="SELECT * from representative where username='$uname' and password='$pword'";
+        $q1="SELECT * from representative where username='$uname'";
         $res1=mysqli_query($db,$q1);
         $rc=mysqli_num_rows($res1);
         if($rc==0){
@@ -43,7 +43,7 @@
             <?php
         }
         else{
-        $q="DELETE from representative where username='$uname' and password='$pword'";
+        $q="DELETE from representative where username='$uname'";
         $res=mysqli_query($db,$q);
         if($res){
             ?>
