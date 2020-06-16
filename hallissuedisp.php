@@ -126,10 +126,6 @@
                     </div>
                     <div class="btn col-12 col-md-5">
                         <button class="btn btn-primary">Rectified</button>
-                        <a href="logout.php"><button type="button" class="btn btn-dark btn-md">
-                        <i class="fa fa-sign-out"></i> Log Out
-                        </button></a><br><br>
-                        <a href="displayrecords.php">See Bookings?</a>
                     </div>
                     <div class="row row-content">
                     </div>
