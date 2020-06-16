@@ -38,10 +38,8 @@
             else
             {
                 $query="DELETE from problems where system_no='$name'";
-                $query1="UPDATE systems set issues=issues-1 where system_no='$name'";
                 $query2="UPDATE systems set current='Working' where system_no='$name' ";
                 $result=mysqli_query($db1,$query);
-                $result1=mysqli_query($db1,$query1);
                 $result2=mysqli_query($db1,$query2);
                 echo 'THE ISSUE ON '.$name.' IS RECTIFIED';
             }

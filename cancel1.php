@@ -51,6 +51,7 @@
     $pno=$_POST['pno'];
     $date=$_POST['date'];
     $db=mysqli_connect("localhost","root","",$bname);
+    $db1=mysqli_connect("localhost","root","","hallbookingauthority");
     if(!$db)
     {echo 'CONNECTION FAILED';}
     else
@@ -65,7 +66,9 @@
         else
         {
             $q2="DELETE from booking where hallnumber='$hno' and date='$date' and period='$pno'";
+            $q3="UPDATE tempfreeperiod set status='Free' where hallnumber='$hno' and period='$pno'";
             $r1=mysqli_query($db,$q2);
+            $r2=mysqli_query($db1,$q3);
             echo '<p style="text-align:center;font-size:20px;margin-top:200px;">Your Booking has been cancelled successfully</p>';
         }
     }
