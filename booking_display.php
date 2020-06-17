@@ -48,9 +48,14 @@
         <p style="text-align:center;font-size:30px;">YOUR BOOKINGS</p>
         <br>
         <?php
+        $db1=mysqli_connect("localhost","root","","hallbookingauthority");
         $uname=$_SESSION['usernames'];
+        $query="SELECT class_code from representative where username='$uname'";
+        $res=mysqli_query($db1,$query);
+        $ress=mysqli_fetch_assoc($res);
+        $cc=$ress['class_code'];
         $db=mysqli_connect("localhost","root","","gblock");
-        $q="SELECT * from booking where roll_no='$uname'";
+        $q="SELECT * from booking where class_code='$cc'";
         $r=mysqli_query($db,$q);
         $rc=mysqli_num_rows($r);
         ?>
