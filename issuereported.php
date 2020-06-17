@@ -59,7 +59,7 @@
             ?>
             <div class="container">
             <?php
-            $q2="SELECT * from issue";
+            $q2="SELECT * from issue where hallnumber='$hno1'";
             $r2=mysqli_query($db1,$q2);
             $rc2=mysqli_num_rows($r2);
             if($rc2==0)
@@ -70,7 +70,7 @@
             }
             else
             {
-                $q="SELECT issues from issue where status='rectified'";
+                $q="SELECT issues from issue where status='rectified' and hallnumber='$hno1'";
                 $r=mysqli_query($db1,$q);
                 $rc=mysqli_num_rows($r);
                 if($rc==0)
@@ -96,7 +96,7 @@
                     echo '</div>';
                     echo '</div>';
                 }
-                $q1="SELECT issues from issue where status='unrectified'";
+                $q1="SELECT issues from issue where status='unrectified' and hallnumber='$hno1'";
                 $r1=mysqli_query($db1,$q1);
                 $rc1=mysqli_num_rows($r1);
                 if($rc1==0)
