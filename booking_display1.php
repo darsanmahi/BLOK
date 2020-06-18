@@ -58,6 +58,8 @@
         $arrg=array();
         $i=0;
         $arrj=array();
+        $arra=array();
+        $arry=array();
         if($rc!=0)
         {
             ?>
@@ -133,10 +135,88 @@
         }
         else
         {echo '<div class="row row-header"><h4>No Halls booked in J-Block</h4></div>';}
-        if($rc1!=0 || $rc!=0)
-        {echo '<a href="cancelclub.php">Cancel Any Booking?</a>';}
+        $db2=mysqli_connect("localhost","root","","yblock");
+        $q2="SELECT * from booking where roll_no='$uname'";
+        $r2=mysqli_query($db2,$q2);
+        $rc2=mysqli_num_rows($r2);
+        if($rc2!=0)
+        {
+            ?>
+                <div class="row row-header">
+                    <h3>Y-Block:</h3>
+                </div>
+                <div class="row row-content">
+            <?php
+            while($res2=mysqli_fetch_array($r2))
+            { 
+                ?>
+                <div class="col-12 col-sm-2 align-contents-center">
+                <?php
+                echo '<strong>HALL NUMBER: </strong>'.$res2['hallnumber'];
+                echo '<br>';
+                echo '<strong>PERIOD: </strong>'.$res2['period'];
+                echo '<br>';
+                echo '<strong>DATE: </strong>'.$res2['date'];
+                echo '<br>';
+                echo '<strong>DAY: </strong>'.$res2['day'];
+                echo '<br>';echo '<br>';
+                $arry[$i]=$res2['hallnumber'];
+                $i++;
+                ?>
+                <div class="col-12 col-sm-2 align-contents-center">
+                </div>
+                </div>
+                <?php
+            }
+            $i=0;
+            ?></div><?php
+        }
+        else
+        {echo '<div class="row row-header"><h4>No Halls booked in Y-Block</h4></div>';}
+        $db3=mysqli_connect("localhost","root","","ablock");
+        $q3="SELECT * from booking where roll_no='$uname'";
+        $r3=mysqli_query($db3,$q3);
+        $rc3=mysqli_num_rows($r3);
+        if($rc3!=0)
+        {
+            ?>
+                <div class="row row-header">
+                    <h3>A-Block:</h3>
+                </div>
+                <div class="row row-content">
+            <?php
+            while($res3=mysqli_fetch_array($r3))
+            { 
+                ?>
+                <div class="col-12 col-sm-2 align-contents-center">
+                <?php
+                echo '<strong>HALL NUMBER: </strong>'.$res3['hallnumber'];
+                echo '<br>';
+                echo '<strong>PERIOD: </strong>'.$res3['period'];
+                echo '<br>';
+                echo '<strong>DATE: </strong>'.$res3['date'];
+                echo '<br>';
+                echo '<strong>DAY: </strong>'.$res3['day'];
+                echo '<br>';echo '<br>';
+                $arra[$i]=$res3['hallnumber'];
+                $i++;
+                ?>
+                <div class="col-12 col-sm-2 align-contents-center">
+                </div>
+                </div>
+                <?php
+            }
+            $i=0;
+            ?></div><?php
+        }
+        else
+        {echo '<div class="row row-header"><h4>No Halls booked in A-Block</h4></div>';}
+        if($rc!=0 || $rc1!=0 || $rc2!=0 || $rc3!=0)
+        {echo '<a href="cancel.php">Cancel Any Booking?</a>';}
         $_SESSION['arrg']=$arrg;
         $_SESSION['arrj']=$arrj;
+        $_SESSION['arry']=$arry;
+        $_SESSION['arra']=$arra;
         ?>
         </div>
         <?php
