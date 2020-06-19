@@ -31,9 +31,9 @@
                 <a class="navbar-brand mr-auto" href="#"><img src="./images/3be847d8-395b-4d3b-a493-c75ae865e1b5_200x200.png" height="45" width="42"></a>
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="category.php">Home</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="search1.php">Book New Hall</a></li>
-                            <li class="nav-item"><a class="nav-link" href="booking_display1.php">Previous Bookings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php"> <i class="fa fa-home"></i> Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="search1.php"><i class="fa fa-book"></i> Book New Hall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="booking_display1.php"><i class="fa fa-chevron-left"></i> Previous Bookings</a></li>
                         </ul>
                         <span>
                             <a href="logout.php"><button type="button" class="btn btn-light btn-md">
