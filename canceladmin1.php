@@ -58,6 +58,10 @@
         $cc=$_SESSION['classcode'];
         $db=mysqli_connect("localhost","root","",$blk);
         $db1=mysqli_connect("localhost","root","","hallbookingauthority");
+        $q11="SELECT * from booking where hallnumber='$hno' and period ='$period' and date =' $date'";
+        $r11=mysqli_query($db,$q11);
+        $rccc=mysqli_num_rows($r11);
+        if($rccc>0){
         $q="DELETE from booking where hallnumber='$hno' and period='$period' and date='$date' and class_code='$cc'";
         $result=mysqli_query($db,$q);
         $q1="UPDATE tempfreeperiod set status='Free' where hallnumber='$hno' and period='$period' and date='$date' and class_code='$cc'";
@@ -70,6 +74,10 @@
         else
         {
             echo '<h3>Your Booking has been cancelled successfully</h3>';
+        }
+        }
+        else{
+            echo '<p style="padding:250px 0px 0px 0px";> There is no booking of hall '.$hno. ' for period '.$period. ' on '.$date.'</p>';
         }
         ?>
         </div>

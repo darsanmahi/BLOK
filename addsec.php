@@ -12,7 +12,7 @@
         $cc=$_POST['clubname'];
     }
     if(isset($_POST['reg'])){
-        if($pword=' '){
+        if($pword==' '){
             ?>
             <script>
                 alert("Password Required");

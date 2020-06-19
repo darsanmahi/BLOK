@@ -93,9 +93,9 @@
             {
                 $query="SELECT hallnumber from {$day} where hallnumber not in (SELECT hallnumber from booking where date='$date' and period='$pno' UNION SELECT hallnumber from bookingclub where date='$date' and period='$pno' ) and startingperiod='$pno'";
             }
-            elseif($rc1==0)
+            else
             {
-                $query="SELECT hallnumber from {$day} where $pno=startingperiod";
+                $query="SELECT hallnumber from {$day} where startingperiod='$pno'";
             }
                 $result=mysqli_query($db1,$query);
                 $rc=mysqli_num_rows($result);
