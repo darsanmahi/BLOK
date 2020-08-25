@@ -8,7 +8,7 @@ Install Xampp on your machine from (www.apachefriends.org)
 
 Go to C:/xampp/htdocs using command prompt
 
-git clone https://priyadarsan@bitbucket.org/priyadarsan/spd.git
+git clone https://github.com/darsanmahi/BLOK.git
 
 `npm install`
 
